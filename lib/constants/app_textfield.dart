@@ -1,17 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class customtxt extends StatelessWidget {
+class CustomTxt extends StatelessWidget {
   final String txt;
-  final FontWeight fontweight;
-  final double fontsize;
-    Color color;
-  final  dsf;
-  customtxt({required this.txt,required this.fontweight,required this.fontsize,  this.color=Colors.black,  this.dsf='Roboto',});
+  final FontWeight weight;
+  final double size;
+  final Color color;
+  final dsf;
+
+  const CustomTxt({
+    super.key,
+    required this.txt,
+    required this.weight,
+    required this.size,
+    this.color = Colors.black,
+    this.dsf = 'Roboto',
+  });
 
   @override
   Widget build(BuildContext context) {
-   // return Text(txt,style: TextStyle(fontWeight: fontweight,fontSize:fontsize,color: color,fontFamily: dsf) );
-    return Text(txt,style: TextStyle(fontWeight:fontweight,fontSize: fontsize,color: color,fontFamily: dsf ),);
+    // return Text(txt,style: TextStyle(fontWeight: fontweight,fontSize:fontsize,color: color,fontFamily: dsf) );
+    return Text(
+      txt,
+      style: TextStyle(
+          fontWeight: weight, fontSize: size, color: color, fontFamily: dsf),
+    );
   }
 }

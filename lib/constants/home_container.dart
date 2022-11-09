@@ -4,18 +4,18 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_textfield.dart';
 
-class Get_Image_Container extends StatelessWidget {
+class GetImageContainer extends StatelessWidget {
   final String img1;
   final String txt;
-  FontWeight fontweight;
-  double fontsize;
+  final FontWeight weight;
+  final double size;
 
-  Get_Image_Container(
+  const GetImageContainer(
       {super.key,
       required this.txt,
       required this.img1,
-      this.fontweight = FontWeight.w400,
-      this.fontsize = 12});
+      this.weight = FontWeight.w400,
+      this.size = 12});
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +34,10 @@ class Get_Image_Container extends StatelessWidget {
           SizedBox(
             height: 10.h,
           ),
-          customtxt(
+          CustomTxt(
             txt: txt,
-            fontweight: fontweight,
-            fontsize: fontsize,
+            weight: weight,
+            size: size,
           ),
         ],
       ),
