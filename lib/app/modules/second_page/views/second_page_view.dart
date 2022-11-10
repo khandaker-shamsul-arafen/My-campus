@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../../constants/app_button.dart';
 import '../../../../constants/app_textfield.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/second_page_controller.dart';
@@ -102,25 +103,30 @@ class SecondPageView extends GetView<SecondPageController> {
                 height: 15.sp,
               ),
               SizedBox(
-                width: double.infinity,
-                height: 50.h,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFA369BF),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30.0)),
-                  ),
-                  onPressed: () {
-                    Get.toNamed(Routes.THIRD_PAGE);
-                  },
-                  child: CustomTxt(
-                    txt: 'Continue',
-                    weight: FontWeight.w500,
-                    size: 14.sp,
-                    color: Colors.white,
-                  ),
-                ),
-              )
+                  width: double.infinity,
+                  height: 50.h,
+                  child: AppButton(
+                      txt: "Continue",
+                      page: Routes.THIRD_PAGE,
+                      background_color: const Color(0xFFA369BF),
+                      txt_color: Colors.white)
+                  // ElevatedButton(
+                  //   style: ElevatedButton.styleFrom(
+                  //     backgroundColor: const Color(0xFFA369BF),
+                  //     shape: RoundedRectangleBorder(
+                  //         borderRadius: BorderRadius.circular(30.0)),
+                  //   ),
+                  //   onPressed: () {
+                  //     Get.toNamed(Routes.THIRD_PAGE);
+                  //   },
+                  //   child: CustomTxt(
+                  //     txt: 'Continue',
+                  //     weight: FontWeight.w500,
+                  //     size: 14.sp,
+                  //     color: Colors.white,
+                  //   ),
+                  // ),
+                  )
             ],
           ),
         ),

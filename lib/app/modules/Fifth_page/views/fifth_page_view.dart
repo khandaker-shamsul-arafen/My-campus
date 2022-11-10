@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:my_campus/constants/app_button.dart';
 
 import '../../../../constants/app_searchbar.dart';
 import '../../../../constants/app_textfield.dart';
@@ -96,28 +97,35 @@ class FifthPageView extends GetView<FifthPageController> {
                 Padding(
                   padding: EdgeInsets.all(8.0.r),
                   child: SizedBox(
-                    width: double.infinity,
-                    height: 45.h,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
-                          side: const BorderSide(
-                            width: 1.0,
-                            color: Color(0xFFA1A1A1),
-                          )),
-                      onPressed: () {
-                        Get.toNamed(Routes.SIXTH_PAGE);
-                      },
-                      child: CustomTxt(
-                        txt: 'Proceed With Payment',
-                        weight: FontWeight.w500,
-                        size: 14.sp,
-                        color: Color(0xFFA1A1A1),
+                      width: double.infinity,
+                      height: 45.h,
+                      child: AppButton(
+                        txt: "Proceed with Payment",
+                        page: Routes.SIXTH_PAGE,
+                        background_color: Colors.white,
+                        txt_color: const Color(0xFFA1A1A1),
+                        border_coor: const Color(0xFFA1A1A1),
+                      )
+                      // ElevatedButton(
+                      //   style: ElevatedButton.styleFrom(
+                      //       backgroundColor: Colors.white,
+                      //       shape: RoundedRectangleBorder(
+                      //           borderRadius: BorderRadius.circular(30.0)),
+                      //       side: const BorderSide(
+                      //         width: 1.0,
+                      //         color: Color(0xFFA1A1A1),
+                      //       )),
+                      //   onPressed: () {
+                      //     Get.toNamed(Routes.SIXTH_PAGE);
+                      //   },
+                      //   child: CustomTxt(
+                      //     txt: 'Proceed With Payment',
+                      //     weight: FontWeight.w500,
+                      //     size: 14.sp,
+                      //     color: Color(0xFFA1A1A1),
+                      //   ),
+                      // ),
                       ),
-                    ),
-                  ),
                 )
               ],
             ),

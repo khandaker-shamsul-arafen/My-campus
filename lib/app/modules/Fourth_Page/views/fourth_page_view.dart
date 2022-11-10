@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../constants/AppCheckBox.dart';
+import '../../../../constants/app_button.dart';
 import '../../../../constants/app_searchbar.dart';
 import '../../../../constants/app_textfield.dart';
 import '../../../routes/app_pages.dart';
@@ -101,28 +102,35 @@ class FourthPageView extends GetView<FourthPageController> {
                 Padding(
                   padding: EdgeInsets.all(8.0.r),
                   child: SizedBox(
-                    width: double.infinity,
-                    height: 45.h,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0)),
-                          side: BorderSide(
-                            width: 1.0,
-                            color: Colors.purpleAccent,
-                          )),
-                      onPressed: () {
-                        Get.toNamed(Routes.FIFTH_PAGE);
-                      },
-                      child: CustomTxt(
-                        txt: 'Pay Selected Once',
-                        weight: FontWeight.w500,
-                        size: 14.sp,
-                        color: Colors.purple,
+                      width: double.infinity,
+                      height: 45.h,
+                      child: AppButton(
+                        txt: "Pay Selected Once",
+                        page: Routes.FIFTH_PAGE,
+                        background_color: Colors.white,
+                        txt_color: Colors.purple,
+                        border_coor: Colors.purpleAccent,
+                      )
+                      // ElevatedButton(
+                      //   style: ElevatedButton.styleFrom(
+                      //       backgroundColor: Colors.white,
+                      //       shape: RoundedRectangleBorder(
+                      //           borderRadius: BorderRadius.circular(30.0)),
+                      //       side: BorderSide(
+                      //         width: 1.0,
+                      //         color: Colors.purpleAccent,
+                      //       )),
+                      //   onPressed: () {
+                      //     Get.toNamed(Routes.FIFTH_PAGE);
+                      //   },
+                      //   child: CustomTxt(
+                      //     txt: 'Pay Selected Once',
+                      //     weight: FontWeight.w500,
+                      //     size: 14.sp,
+                      //     color: Colors.purple,
+                      //   ),
+                      // ),
                       ),
-                    ),
-                  ),
                 )
               ],
             ),

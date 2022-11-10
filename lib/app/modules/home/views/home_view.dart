@@ -20,66 +20,71 @@ class HomeView extends GetView<HomeController> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 13.h),
-                child: Container(
-                  height: 150.h,
-                  decoration: BoxDecoration(
-                      //color: Colors.amber,
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.topRight,
-                          colors: [
-                            const Color(0xFFA150DF).withOpacity(0.12),
-                            const Color(0xFFD9D9D9).withOpacity(0.2)
-                          ]),
-                      borderRadius: BorderRadius.circular(15)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 8.0.h, left: 12.w),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 0.w, top: 12.h, bottom: 9.h),
-                              child: CustomTxt(
-                                  txt: "Pay with Reliability",
-                                  weight: FontWeight.w700,
-                                  size: 18.sp),
-                            ),
-                            const CustomTxt(
-                                txt:
-                                    'Lorem Ipsum is simply dummy text\n of the printing and typesetting\n industry.',
-                                weight: FontWeight.w400,
-                                size: 12),
-                            // TextButton(onPressed: (){}, child: customtxt(txt: 'Pay Now', fontweight: FontWeight.w500, fontsize: 14.sp,))
-                            ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFFA369BF),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(30.0)),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Container(
+                    height: 150.h,
+                    width: double.maxFinite,
+                    decoration: BoxDecoration(
+                        //color: Colors.amber,
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              const Color(0xFFA150DF).withOpacity(0.12),
+                              const Color(0xFFD9D9D9).withOpacity(0.2)
+                            ]),
+                        borderRadius: BorderRadius.circular(15.r)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(top: 8.0.h, left: 12.w),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    left: 0.w, top: 12.h, bottom: 9.h),
+                                child: CustomTxt(
+                                    txt: "Pay with Reliability",
+                                    weight: FontWeight.w700,
+                                    size: 18.sp),
                               ),
-                              onPressed: () {
-                                Get.toNamed(Routes.SECOND_PAGE);
-                              },
-                              child: CustomTxt(
-                                txt: 'Pay Now',
-                                weight: FontWeight.w500,
-                                size: 14.sp,
-                                color: Colors.white,
-                              ),
-                            )
-                          ],
+                              const CustomTxt(
+                                  txt:
+                                      'Lorem Ipsum is simply dummy text\n of the printing and typesetting\n industry.',
+                                  weight: FontWeight.w400,
+                                  size: 12),
+                              // TextButton(onPressed: (){}, child: customtxt(txt: 'Pay Now', fontweight: FontWeight.w500, fontsize: 14.sp,))
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFFA369BF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(30.0.r)),
+                                ),
+                                onPressed: () {
+                                  Get.toNamed(Routes.SECOND_PAGE);
+                                },
+                                child: CustomTxt(
+                                  txt: 'Pay Now',
+                                  weight: FontWeight.w500,
+                                  size: 14.sp,
+                                  color: Colors.white,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Image.asset(
-                        "assets/img.png",
-                        height: 200.h,
-                        width: 155.w,
-                      ),
-                    ],
+                        Image.asset(
+                          "assets/img.png",
+                          height: 200.h,
+                          width: 155.w,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -110,19 +115,22 @@ class HomeView extends GetView<HomeController> {
               SizedBox(
                 height: 8.h,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  GetImageContainer(
-                      txt: "Titumir College",
-                      img1: 'assets/Titumir_college.png'),
-                  GetImageContainer(
-                      txt: "BAF Shaheen College",
-                      img1: 'assets/baf_shaheen.png'),
-                  GetImageContainer(
-                      txt: "Govt.Keshab Chandra College",
-                      img1: 'assets/logo.jpeg'),
-                ],
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    GetImageContainer(
+                        txt: "Titumir College",
+                        img1: 'assets/titumir_college.png'),
+                    GetImageContainer(
+                        txt: "BAF Shaheen College",
+                        img1: 'assets/baf_shaheen.png'),
+                    GetImageContainer(
+                        txt: "Govt.Keshab Chandra College",
+                        img1: 'assets/jpe/logo.jpeg'),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 10.h,
@@ -156,7 +164,7 @@ class HomeView extends GetView<HomeController> {
                       width: 80.w,
                     ),
                     Image.asset(
-                      "assets/Nogod.png",
+                      "assets/nogod.png",
                       height: 100.h,
                       width: 80.w,
                     ),

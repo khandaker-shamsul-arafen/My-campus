@@ -20,7 +20,7 @@ class GetImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130.h,
+      height: 150.h,
       child: Column(
         children: [
           Card(

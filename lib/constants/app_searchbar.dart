@@ -66,7 +66,7 @@ class AppSearchBar extends StatelessWidget {
             borderSide: const BorderSide(color: Color(0xFFDDDDDD)),
           ),
           suffixIcon: SizedBox(
-            height: 46.h,
+            height: 50.h,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFFA369BF),
