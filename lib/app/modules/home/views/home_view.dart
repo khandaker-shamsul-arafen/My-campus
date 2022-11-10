@@ -127,7 +127,7 @@ class HomeView extends GetView<HomeController> {
                         txt: "BAF Shaheen College",
                         img1: 'assets/baf_shaheen.png'),
                     GetImageContainer(
-                        txt: "Govt.Keshab Chandra College",
+                        txt: "      Govt.Keshab Chandra College",
                         img1: 'assets/jpe/logo.jpeg'),
                   ],
                 ),
