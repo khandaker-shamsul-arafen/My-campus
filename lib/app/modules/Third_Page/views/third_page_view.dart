@@ -26,8 +26,8 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   children: [
                     Image.asset(
                       "assets/baf_shaheen.png",
-                      height: 90.h,
-                      width: 90.w,
+                      height: 70.h,
+                      width: 70.w,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -48,19 +48,19 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
-                  child: Image.asset(
-                    'assets/baf_shaheen_college.png',
-                    height: 150.h,
-                    fit: BoxFit.cover,
+                    padding: EdgeInsets.only(left: 18.0.w, right: 18.0.w),
+                    child: Image.asset(
+                      'assets/baf_shaheen_college.png',
+                      fit: BoxFit.contain,
+                    ),
                   ),
-                ),
+
                 const AppSearchBar(),
-                SizedBox(
-                  height: 10.h,
-                ),
+                // SizedBox(
+                //   height: 10.h,
+                // ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 13.0.w),
+                  padding: EdgeInsets.only(top: 10.0, left: 23.0.w),
                   child: CustomTxt(
                       txt: "Payment List",
                       weight: FontWeight.w700,
@@ -70,11 +70,13 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   height: 2.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 4.0.h, left: 13.w),
+                  padding: EdgeInsets.only(top: 4.0.h, left: 23.w),
                   child: CustomTxt(
                       txt: "Select to pay",
                       weight: FontWeight.w400,
-                      size: 12.sp),
+                      size: 12.sp,
+                  color: const Color(0xFF959595),
+                  ),
                 ),
                 const SizedBox(
                   height: 5,
@@ -100,10 +102,10 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0.r),
+                  padding: EdgeInsets.only(left: 13.0.w,right: 13.0.w),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 45.h,
+                      height: 57.h,
                       child: AppButton(
                           txt: "Pay All",
                           page: Routes.FOURTH_PAGE,
@@ -128,15 +130,15 @@ class ThirdPageView extends GetView<ThirdPageController> {
                       ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0.r),
+                  padding: EdgeInsets.only(left: 13.0.w,right: 13.0.h),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 45.h,
+                      height: 57.h,
                       child: AppButton(
-                        txt: "Pay All",
+                        txt: "Pay Selected Ones",
                         page: Routes.FOURTH_PAGE,
                         background_color: Colors.white,
-                        txt_color: Colors.purple,
+                        txt_color: Color(0xFFA369BF),
                         border_coor: Colors.purpleAccent,
                       )
                       // ElevatedButton(
@@ -170,6 +172,8 @@ class ThirdPageView extends GetView<ThirdPageController> {
 
 AppBar appbarDesign() {
   return AppBar(
+    elevation: 0,
+    centerTitle: true,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,

@@ -19,27 +19,32 @@ class GetImageContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 150.h,
-      child: Column(
-        children: [
-          Card(
-            elevation: 2,
-            child: Image.asset(
-              img1,
-              height: 100.h,
-              width: 100.w,
+    return Padding(
+      padding:  EdgeInsets.only(left: 15.0.w),
+      child: Container(
+        //color: Colors.red,
+        height: 115.h,
+        child: Column(
+          children: [
+            Card(
+              shadowColor: Colors.white.withOpacity(0.3),
+              elevation: 10,
+              child: Image.asset(
+                img1,
+                height: 70.h,
+                width: 100.w,
+              ),
             ),
-          ),
-          SizedBox(
-            height: 10.h,
-          ),
-          CustomTxt(
-            txt: txt,
-            weight: weight,
-            size: size,
-          ),
-        ],
+            SizedBox(
+              height: 10.h,
+            ),
+            CustomTxt(
+              txt: txt,
+              weight: weight,
+              size: size,
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -25,8 +25,8 @@ class FifthPageView extends GetView<FifthPageController> {
                   children: [
                     Image.asset(
                       "assets/baf_shaheen.png",
-                      height: 90.h,
-                      width: 90.w,
+                      height: 70.h,
+                      width: 70.w,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -47,19 +47,17 @@ class FifthPageView extends GetView<FifthPageController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                  padding: EdgeInsets.only(left: 18.0.w, right: 18.0.w),
                   child: Image.asset(
                     'assets/baf_shaheen_college.png',
-                    height: 150.h,
-                    fit: BoxFit.cover,
+                 //   height: 150.h,
+                    fit: BoxFit.contain,
                   ),
                 ),
                 const AppSearchBar(),
-                SizedBox(
-                  height: 10.h,
-                ),
+
                 Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 13.0.w),
+                  padding: EdgeInsets.only(top: 10.0, left: 18.0.w),
                   child: CustomTxt(
                       txt: "Select Payment Method",
                       weight: FontWeight.w700,
@@ -69,25 +67,39 @@ class FifthPageView extends GetView<FifthPageController> {
                   height: 5.h,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.only(top:8.0.h,left: 18.0.w),
                   child: Row(
                     children: [
-                      Card(
-                          elevation: 2,
-                          child: Image.asset(
-                            "assets/ekpay.png",
-                            height: 60.h,
-                            width: 100.w,
-                            fit: BoxFit.contain,
-                          )),
-                      Card(
-                          elevation: 2,
-                          child: Image.asset(
-                            "assets/bkash.png",
-                            height: 60.h,
-                            width: 100.w,
-                            fit: BoxFit.contain,
-                          )),
+                      SizedBox(
+                        width:120,
+                        height: 60,
+                        child: Card(
+                            elevation: 2,
+                            child: Padding(
+                              padding: const EdgeInsets.all(13.0),
+                              child: Image.asset(
+                                "assets/ekpay.png",
+                                height: 45.h,
+                                width: 100.w,
+                                fit: BoxFit.fill,
+                              ),
+                            )),
+                      ),
+                      SizedBox(
+                        width:120,
+                        height: 60,
+                        child: Card(
+                            elevation: 2,
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Image.asset(
+                                "assets/bkash.png",
+                                height: 60.h,
+                                width: 100.w,
+                                fit: BoxFit.contain,
+                              ),
+                            )),
+                      ),
                     ],
                   ),
                 ),
@@ -98,7 +110,7 @@ class FifthPageView extends GetView<FifthPageController> {
                   padding: EdgeInsets.all(8.0.r),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 45.h,
+                      height: 57.h,
                       child: AppButton(
                         txt: "Proceed with Payment",
                         page: Routes.SIXTH_PAGE,
@@ -135,6 +147,8 @@ class FifthPageView extends GetView<FifthPageController> {
 
   AppBar appbarDesign() {
     return AppBar(
+      elevation: 0,
+      centerTitle: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

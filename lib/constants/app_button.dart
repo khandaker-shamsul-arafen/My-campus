@@ -26,23 +26,26 @@ class AppButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-          backgroundColor: background_color,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
-          side: BorderSide(
-            width: 1.0,
-            color: border_coor,
-          )),
-      onPressed: () {
-        Get.toNamed(page);
-      },
-      child: CustomTxt(
-        txt: txt,
-        weight: FontWeight.w500,
-        size: 14.sp,
-        color: txt_color,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+            backgroundColor: background_color,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+            side: BorderSide(
+              width: 1.0,
+              color: border_coor,
+            )),
+        onPressed: () {
+          Get.toNamed(page);
+        },
+        child: CustomTxt(
+          txt: txt,
+          weight: FontWeight.w500,
+          size: 14.sp,
+          color: txt_color,
+        ),
       ),
     );
   }

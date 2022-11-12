@@ -16,13 +16,14 @@ Future<void> main() async {
       builder: (BuildContext context, Widget? child) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: "DSHE",
+          title: "My Campus",
           //  builder: EasyLoading.init(),
           initialRoute: AppPages.INITIAL,
           //  initialBinding: InitialBinding(),
           theme: ThemeData(
             //    primarySwatch: AppColors.primarySwatchColor,
             fontFamily: 'Roboto',
+            scaffoldBackgroundColor: const Color(0xFFDDDDDD)
           ),
           getPages: AppPages.routes,
         );

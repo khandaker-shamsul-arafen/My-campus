@@ -23,13 +23,13 @@ class SecondPageView extends GetView<SecondPageController> {
       appBar: appbarDesign(),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(8.0.r),
+          padding: EdgeInsets.only(top: 8.0.h,left: 16.w),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomTxt(
-                txt: "Give your Id",
+                txt: "Give your ID",
                 weight: FontWeight.w700,
                 size: 18.sp,
               ),
@@ -38,73 +38,130 @@ class SecondPageView extends GetView<SecondPageController> {
               ),
               CustomTxt(
                 txt:
-                    "Lorem Ipsum is simply dummy text of the printing and /n typesetting industry.",
+                    "Lorem Ipsum is simply dummy text of the printing and \n typesetting industry.",
                 weight: FontWeight.w500,
                 size: 12.sp,
                 color: const Color(0xFF746A6A),
               ),
               SizedBox(
                 height: 5.h,
-              ),
-              Card(
-                elevation: 2,
-                child: ListTile(
-                  leading: Icon(IconData(0xe11b, fontFamily: 'MaterialIcons')),
-                  title: const TextField(
+              ),  ListTile(
+                 leading: Image.asset("assets/txt_field_icon.png",height: 19.h,width: 19.w,),
+                title: Transform.translate(
+                  offset: Offset(-16,0),
+                  child:  TextField(
                     decoration: InputDecoration.collapsed(
-                        hintText: 'Select your institute'),
+                       hintText: 'Select your Institute',
+                    hintStyle:TextStyle(
+                      color: Color(0xFF746A6A),
+                      fontFamily: "SF Pro Display",
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16.sp
+                    ), ),
+
                   ),
-                  trailing: DropdownButton(
+                ),
+                 trailing: DropdownButtonHideUnderline(
+                   child: DropdownButton(
+
                     // Initial Value
 
-                    // Down Arrow Icon
+                   // Down Arrow Icon
                     icon: const Icon(Icons.arrow_drop_down),
 
                     // Array list of items
-                    items: items.map((String items) {
+                     items: items.map((String items) {
                       return DropdownMenuItem(
                         value: items,
                         child: Text(items),
-                      );
-                    }).toList(),
+                    );
+                     }).toList(),
                     onChanged: (Object? value) {},
-                  ),
                 ),
+                 ),
               ),
-              SizedBox(
+              Padding(
+                padding: EdgeInsets.only(left: 8.0.w,right: 15.0.w),
+                child: Divider(
+                  thickness: 1,
+                 ),
+              ),
+               SizedBox(
                 width: 5.h,
-              ),
-              Card(
-                elevation: 2,
-                child: ListTile(
-                  leading: Icon(Icons.person),
-                  title: const TextField(
-                    decoration:
-                        InputDecoration.collapsed(hintText: 'Type Your Id'),
+               ),
+               ListTile(
+                 leading: Icon(Icons.person),
+                title:  TextField(
+                   decoration:
+                       InputDecoration.collapsed(
+                           hintText: "Type Your Id",
+                         hintStyle:TextStyle(
+                             color: Color(0xFF746A6A),
+                             fontFamily: "SF Pro Display",
+                             fontWeight: FontWeight.w400,
+                             fontSize: 16.sp
+                         )
+                         ,),
                   ),
-                  trailing: DropdownButton(
+
+                minLeadingWidth: 10.w,
+                trailing: DropdownButtonHideUnderline(
+                  child: DropdownButton(
+
                     // Initial Value
-
                     // Down Arrow Icon
-                    icon: const Icon(Icons.arrow_drop_down),
+                  icon: const Icon(Icons.arrow_drop_down),
 
-                    // Array list of items
+                   // Array list of items
                     items: items.map((String items) {
-                      return DropdownMenuItem(
-                        value: items,
-                        child: Text(items),
+                    return DropdownMenuItem(
+                         value: items,
+                         child: Text(items),
                       );
-                    }).toList(),
-                    onChanged: (Object? value) {},
-                  ),
+                     }).toList(),
+                      onChanged: (Object? value) {},
+                   ),
+                ),
+               ),
+              Padding(
+                padding:  EdgeInsets.only(left: 8.0.w,right: 15.0.w),
+                child: Divider(
+                  thickness: 1,
+
                 ),
               ),
-              SizedBox(
-                height: 15.sp,
-              ),
+               SizedBox(
+                height: 5.h,
+               ),
+              // Padding(
+              //   padding:  EdgeInsets.only(left: 5.0.w,top:8.0.h,right: 5.0.w,bottom: 5.h ),
+              //   child: Container(
+              //     height: 100,
+              //     width: 400,
+              //     color: Colors.red,
+              //     child: Row(
+              //       children: [
+              //         Image.asset("assets/txt_field_icon.png",height: 19.h,width: 19.w,),
+              //         SizedBox(
+              //           width: 10.w,
+              //         ),
+              //        TextField(
+              //           decoration: InputDecoration.collapsed(hintText: "Select Your institute"),
+              //         ),
+              //
+              //         SizedBox(
+              //           width: 120.w,
+              //         ),
+              //         Icon(Icons.arrow_drop_down),
+              //
+              //
+              //       ],
+              //     ),
+              //   ),
+              // ),
               SizedBox(
                   width: double.infinity,
-                  height: 50.h,
+                  height: 55.h,
                   child: AppButton(
                       txt: "Continue",
                       page: Routes.THIRD_PAGE,
@@ -137,6 +194,8 @@ class SecondPageView extends GetView<SecondPageController> {
 
 AppBar appbarDesign() {
   return AppBar(
+    centerTitle: true,
+    elevation: 0,
     title: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,

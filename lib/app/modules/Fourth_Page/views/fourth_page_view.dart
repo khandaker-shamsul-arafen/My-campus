@@ -17,7 +17,7 @@ class FourthPageView extends GetView<FourthPageController> {
     return Scaffold(
         appBar: appbarDesign(),
         body: SafeArea(
-          child: SingleChildScrollView(
+          child:SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,8 +26,8 @@ class FourthPageView extends GetView<FourthPageController> {
                   children: [
                     Image.asset(
                       "assets/baf_shaheen.png",
-                      height: 90.h,
-                      width: 90.w,
+                      height: 70.h,
+                      width: 70.w,
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -48,19 +48,19 @@ class FourthPageView extends GetView<FourthPageController> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                  padding: EdgeInsets.only(left: 18.0.w, right: 18.0.w),
                   child: Image.asset(
                     'assets/baf_shaheen_college.png',
-                    height: 150.h,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
+
                 const AppSearchBar(),
-                SizedBox(
-                  height: 10.h,
-                ),
+                // SizedBox(
+                //   height: 10.h,
+                // ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 13.0.w),
+                  padding: EdgeInsets.only(top: 10.0, left: 23.0.w),
                   child: CustomTxt(
                       txt: "Payment List",
                       weight: FontWeight.w700,
@@ -70,11 +70,13 @@ class FourthPageView extends GetView<FourthPageController> {
                   height: 2.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 4.0.h, left: 13.w),
+                  padding: EdgeInsets.only(top: 4.0.h, left: 23.w),
                   child: CustomTxt(
-                      txt: "Select to pay",
-                      weight: FontWeight.w400,
-                      size: 12.sp),
+                    txt: "Select to pay",
+                    weight: FontWeight.w400,
+                    size: 12.sp,
+                    color: const Color(0xFF959595),
+                  ),
                 ),
                 const SizedBox(
                   height: 5,
@@ -100,46 +102,77 @@ class FourthPageView extends GetView<FourthPageController> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0.r),
+                  padding: EdgeInsets.only(left: 13.0.w,right: 13.0.w),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 45.h,
+                      height: 57.h,
                       child: AppButton(
-                        txt: "Pay Selected Once",
+                          txt: "Pay All",
+                          page: Routes.FIFTH_PAGE,
+                          background_color: const Color(0xFFA369BF),
+                          txt_color: Colors.white)
+                    // ElevatedButton(
+                    //   style: ElevatedButton.styleFrom(
+                    //     backgroundColor: const Color(0xFFA369BF),
+                    //     shape: RoundedRectangleBorder(
+                    //         borderRadius: BorderRadius.circular(30.0)),
+                    //   ),
+                    //   onPressed: () {
+                    //     Get.toNamed(Routes.FOURTH_PAGE);
+                    //   },
+                    //   child: CustomTxt(
+                    //     txt: 'Pay All',
+                    //     weight: FontWeight.w500,
+                    //     size: 14.sp,
+                    //     color: Colors.white,
+                    //   ),
+                    // ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 13.0.w,right: 13.0.h),
+                  child: SizedBox(
+                      width: double.infinity,
+                      height: 57.h,
+                      child: AppButton(
+                        txt: "Pay Selected Ones",
                         page: Routes.FIFTH_PAGE,
                         background_color: Colors.white,
-                        txt_color: Colors.purple,
+                        txt_color: Color(0xFFA369BF),
                         border_coor: Colors.purpleAccent,
                       )
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //       backgroundColor: Colors.white,
-                      //       shape: RoundedRectangleBorder(
-                      //           borderRadius: BorderRadius.circular(30.0)),
-                      //       side: BorderSide(
-                      //         width: 1.0,
-                      //         color: Colors.purpleAccent,
-                      //       )),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.FIFTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Pay Selected Once',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Colors.purple,
-                      //   ),
-                      // ),
-                      ),
+                    // ElevatedButton(
+                    //   style: ElevatedButton.styleFrom(
+                    //       // backgroundColor: const Color(0xFFA369BF),
+                    //       backgroundColor: Colors.white,
+                    //       shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(30.0)),
+                    //       side: const BorderSide(
+                    //         width: 1.0,
+                    //         color: Colors.purpleAccent,
+                    //       )),
+                    //   onPressed: () {
+                    //     Get.toNamed(Routes.FOURTH_PAGE);
+                    //   },
+                    //   child: CustomTxt(
+                    //     txt: 'Pay Selected Once',
+                    //     weight: FontWeight.w500,
+                    //     size: 14.sp,
+                    //     color: Colors.purple,
+                    //   ),
+                    // ),
+                  ),
                 )
               ],
             ),
-          ),
+          )
         ));
   }
 
   AppBar appbarDesign() {
     return AppBar(
+      elevation: 0,
+      centerTitle: true,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
