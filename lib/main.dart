@@ -10,7 +10,7 @@ Future<void> main() async {
 
   runApp(
     ScreenUtilInit(
-      designSize: const Size(360, 690),
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
@@ -23,7 +23,8 @@ Future<void> main() async {
           theme: ThemeData(
             //    primarySwatch: AppColors.primarySwatchColor,
             fontFamily: 'Roboto',
-            scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
+            scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+          ),
           getPages: AppPages.routes,
         );
       },
