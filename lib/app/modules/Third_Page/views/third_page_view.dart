@@ -86,7 +86,8 @@ class ThirdPageView extends GetView<ThirdPageController> {
                 AppCheckBox(),
                 AppCheckBox(),
                 Padding(
-                  padding: EdgeInsets.only(left: 18.0.w, right: 10.0.sp),
+                  padding:
+                      EdgeInsets.only(left: 18.0.w, right: 10.0.sp, top: 15.h),
                   child: const Divider(
                     thickness: 1,
                   ),
