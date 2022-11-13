@@ -117,23 +117,8 @@ class FourthPageView extends GetView<FourthPageController> {
                         page: Routes.FIFTH_PAGE,
                         background_color: const Color(0xFFA369BF),
                         txt_color: Colors.white)
-                    // ElevatedButton(
-                    //   style: ElevatedButton.styleFrom(
-                    //     backgroundColor: const Color(0xFFA369BF),
-                    //     shape: RoundedRectangleBorder(
-                    //         borderRadius: BorderRadius.circular(30.0)),
-                    //   ),
-                    //   onPressed: () {
-                    //     Get.toNamed(Routes.FOURTH_PAGE);
-                    //   },
-                    //   child: CustomTxt(
-                    //     txt: 'Pay All',
-                    //     weight: FontWeight.w500,
-                    //     size: 14.sp,
-                    //     color: Colors.white,
-                    //   ),
-                    // ),
-                  ),
+                    //
+                    ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(left: 13.0.w,right: 13.0.h),
@@ -147,27 +132,8 @@ class FourthPageView extends GetView<FourthPageController> {
                       txt_color: Color(0xFFA369BF),
                       border_coor: Color(0xFFA369BF),
                     )
-                    // ElevatedButton(
-                    //   style: ElevatedButton.styleFrom(
-                    //       // backgroundColor: const Color(0xFFA369BF),
-                    //       backgroundColor: Colors.white,
-                    //       shape: RoundedRectangleBorder(
-                    //           borderRadius: BorderRadius.circular(30.0)),
-                    //       side: const BorderSide(
-                    //         width: 1.0,
-                    //         color: Colors.purpleAccent,
-                    //       )),
-                    //   onPressed: () {
-                    //     Get.toNamed(Routes.FOURTH_PAGE);
-                    //   },
-                    //   child: CustomTxt(
-                    //     txt: 'Pay Selected Once',
-                    //     weight: FontWeight.w500,
-                    //     size: 14.sp,
-                    //     color: Colors.purple,
-                    //   ),
-                    // ),
-                  ),
+                    //
+                    ),
                 )
               ],
             ),

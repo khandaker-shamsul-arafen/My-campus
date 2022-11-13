@@ -98,7 +98,7 @@ class FifthPageView extends GetView<FifthPageController> {
                         height: 60.h,
                         child: Card(
                             elevation: 0.5,
-                            shape: RoundedRectangleBorder(
+                            shape: const RoundedRectangleBorder(
                               side: BorderSide(
                                 // border color
                                 color: Color(0xFFDFDFDF),
@@ -134,25 +134,7 @@ class FifthPageView extends GetView<FifthPageController> {
                         txt_color: const Color(0xFFA1A1A1),
                         border_coor: const Color(0xFFA1A1A1),
                       )
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //       backgroundColor: Colors.white,
-                      //       shape: RoundedRectangleBorder(
-                      //           borderRadius: BorderRadius.circular(30.0)),
-                      //       side: const BorderSide(
-                      //         width: 1.0,
-                      //         color: Color(0xFFA1A1A1),
-                      //       )),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.SIXTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Proceed With Payment',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Color(0xFFA1A1A1),
-                      //   ),
-                      // ),
+                    //
                       ),
                 )
               ],

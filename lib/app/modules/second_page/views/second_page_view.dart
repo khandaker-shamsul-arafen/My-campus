@@ -114,32 +114,6 @@ class SecondPageView extends GetView<SecondPageController> {
                SizedBox(
                 height: 5.h,
                ),
-              // Padding(
-              //   padding:  EdgeInsets.only(left: 5.0.w,top:8.0.h,right: 5.0.w,bottom: 5.h ),
-              //   child: Container(
-              //     height: 100,
-              //     width: 400,
-              //     color: Colors.red,
-              //     child: Row(
-              //       children: [
-              //         Image.asset("assets/txt_field_icon.png",height: 19.h,width: 19.w,),
-              //         SizedBox(
-              //           width: 10.w,
-              //         ),
-              //        TextField(
-              //           decoration: InputDecoration.collapsed(hintText: "Select Your institute"),
-              //         ),
-              //
-              //         SizedBox(
-              //           width: 120.w,
-              //         ),
-              //         Icon(Icons.arrow_drop_down),
-              //
-              //
-              //       ],
-              //     ),
-              //   ),
-              // ),
               SizedBox(
                   width: double.infinity,
                   height: 60.h,
@@ -148,22 +122,7 @@ class SecondPageView extends GetView<SecondPageController> {
                       page: Routes.THIRD_PAGE,
                       background_color: const Color(0xFFA369BF),
                       txt_color: Colors.white)
-                  // ElevatedButton(
-                  //   style: ElevatedButton.styleFrom(
-                  //     backgroundColor: const Color(0xFFA369BF),
-                  //     shape: RoundedRectangleBorder(
-                  //         borderRadius: BorderRadius.circular(30.0)),
-                  //   ),
-                  //   onPressed: () {
-                  //     Get.toNamed(Routes.THIRD_PAGE);
-                  //   },
-                  //   child: CustomTxt(
-                  //     txt: 'Continue',
-                  //     weight: FontWeight.w500,
-                  //     size: 14.sp,
-                  //     color: Colors.white,
-                  //   ),
-                  // ),
+                //
                   )
             ],
           ),

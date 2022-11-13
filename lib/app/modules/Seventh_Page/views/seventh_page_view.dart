@@ -243,24 +243,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                           txt: "Download Invoice PDF",
                           page: Routes.SEVENTH_PAGE,
                           background_color: const Color(0xFFA369BF),
-                          txt_color: Colors.white)
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: const Color(0xFFA369BF),
-                      //     shape: RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.circular(30.0)),
-                      //   ),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.SEVENTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Pay All',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Colors.white,
-                      //   ),
-                      // ),
-                      ),
+                          txt_color: Colors.white)),
                   SizedBox(
                     height: 3.h,
                   ),

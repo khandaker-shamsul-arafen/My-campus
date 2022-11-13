@@ -129,25 +129,7 @@ class SixthPageView extends GetView<SixthPageController> {
                         txt_color: const Color(0xFFFFFFFF),
                         border_coor: const Color(0xFFA1A1A1),
                       )
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //       backgroundColor: Colors.white,
-                      //       shape: RoundedRectangleBorder(
-                      //           borderRadius: BorderRadius.circular(30.0)),
-                      //       side: const BorderSide(
-                      //         width: 1.0,
-                      //         color: Color(0xFFA1A1A1),
-                      //       )),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.SIXTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Proceed With Payment',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Color(0xFFA1A1A1),
-                      //   ),
-                      // ),
+                      //
                       ),
                 )
               ],

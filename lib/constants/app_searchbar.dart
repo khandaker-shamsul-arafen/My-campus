@@ -14,38 +14,6 @@ class AppSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(left: 20.0.w, right: 12.0.w, top: 8.h),
-      // child: Card(
-      //   shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(15.r)),
-      //   elevation: 2,
-      //   child: Padding(
-      //     padding:  EdgeInsets.all(8.0.r),
-      //     child: Container(
-      //       height: 50.h,
-      //       width: MediaQuery.of(context).size.width,
-      //       decoration: BoxDecoration(
-      //         borderRadius: BorderRadius.circular(15.r),
-      //       ),
-      //       child: ListTile(
-      //         leading: Icon(Icons.search),
-      //         trailing:  SizedBox(
-      //           height: 50.h,
-      //
-      //           child: ElevatedButton(
-      //             style: ElevatedButton.styleFrom(
-      //               backgroundColor: const Color(0xFFA369BF),
-      //               shape: const RoundedRectangleBorder(
-      //                   borderRadius: BorderRadius.only(topLeft: Radius.circular(30))
-      //               ),
-      //             ), onPressed: () {
-      //             Get.toNamed(Routes.THIRD_PAGE);
-      //           }, child: CustomTxt(txt: 'Search', weight: FontWeight.w500, size: 14.sp,color: Colors.white,),
-      //           ),
-      //         ),
-      //
-      //       ),
-      //     ),
-      //   ),
-      // ),
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25.r),

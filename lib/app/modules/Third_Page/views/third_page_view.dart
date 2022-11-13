@@ -56,9 +56,6 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   ),
 
                 const AppSearchBar(),
-                // SizedBox(
-                //   height: 10.h,
-                // ),
                 Padding(
                   padding: EdgeInsets.only(top: 10.0.h, left: 23.0.w),
                   child: CustomTxt(
@@ -122,22 +119,7 @@ class ThirdPageView extends GetView<ThirdPageController> {
                           page: Routes.FOURTH_PAGE,
                           background_color: const Color(0xFFA369BF),
                           txt_color: Colors.white)
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //     backgroundColor: const Color(0xFFA369BF),
-                      //     shape: RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.circular(30.0)),
-                      //   ),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.FOURTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Pay All',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Colors.white,
-                      //   ),
-                      // ),
+                      //
                       ),
                 ),
                 Padding(
@@ -152,26 +134,7 @@ class ThirdPageView extends GetView<ThirdPageController> {
                         txt_color: Color(0xFFA369BF),
                         border_coor: Color(0xFFA369BF),
                       )
-                      // ElevatedButton(
-                      //   style: ElevatedButton.styleFrom(
-                      //       // backgroundColor: const Color(0xFFA369BF),
-                      //       backgroundColor: Colors.white,
-                      //       shape: RoundedRectangleBorder(
-                      //           borderRadius: BorderRadius.circular(30.0)),
-                      //       side: const BorderSide(
-                      //         width: 1.0,
-                      //         color: Colors.purpleAccent,
-                      //       )),
-                      //   onPressed: () {
-                      //     Get.toNamed(Routes.FOURTH_PAGE);
-                      //   },
-                      //   child: CustomTxt(
-                      //     txt: 'Pay Selected Once',
-                      //     weight: FontWeight.w500,
-                      //     size: 14.sp,
-                      //     color: Colors.purple,
-                      //   ),
-                      // ),
+                    //
                       ),
                 )
               ],
