@@ -13,7 +13,7 @@ class AppSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 12.0.w, right: 12.0.w, top: 8.h),
+      padding: EdgeInsets.only(left: 20.0.w, right: 12.0.w, top: 8.h),
       // child: Card(
       //   shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(15.r)),
       //   elevation: 2,

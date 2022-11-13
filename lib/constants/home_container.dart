@@ -23,7 +23,7 @@ class GetImageContainer extends StatelessWidget {
       padding:  EdgeInsets.only(left: 15.0.w),
       child: Container(
         //color: Colors.red,
-        height: 115.h,
+        height: 120.h,
         child: Column(
           children: [
             Card(
