@@ -13,7 +13,7 @@ class AppSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(8.0.r),
+      padding: EdgeInsets.only(left: 12.0.w, right: 12.0.w, top: 8.h),
       // child: Card(
       //   shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(15.r)),
       //   elevation: 2,
@@ -46,57 +46,70 @@ class AppSearchBar extends StatelessWidget {
       //     ),
       //   ),
       // ),
-      child: Padding(
-        padding: EdgeInsets.only(left: 4.0.w,right: 4.0.h),
-        child: Card(
-          shadowColor: Color(0xFFDDDDDD),
-          shape: RoundedRectangleBorder(
-            side: BorderSide(
-              color: Color(0xFFDDDDDD),
-            ),
-            borderRadius: BorderRadius.circular(20.0), //<-- SEE HERE
-          ),
-          child: SizedBox(
-            height: 38.h,
-            child: TextFormField(
-              decoration: InputDecoration(
-                prefixIcon: const Icon(Icons.search),
-                // focusedBorder: OutlineInputBorder(
-                //   borderRadius: BorderRadius.only(
-                //       topLeft: Radius.circular(15.r),
-                //       bottomLeft: Radius.circular(15.r),
-                //       bottomRight: Radius.circular(30.r),
-                //       topRight: Radius.circular(30.r)),
-                //   borderSide: const BorderSide(color: Color(0xFFDDDDDD)),
-                // ),
-                enabledBorder: OutlineInputBorder(
-                  // borderRadius: BorderRadius.only(
-                  //     topLeft: Radius.circular(15.r),
-                  //     bottomLeft: Radius.circular(15.r),
-                  //     bottomRight: Radius.circular(30.r),
-                  //     topRight: Radius.circular(30.r)),
-                  borderSide: const BorderSide(color: Color(0xFFDDDDDD)),
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(25.r),
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(
+                  5.0,
+                  5.0,
                 ),
-                suffixIcon: SizedBox(
-                 // height: 100.h,
-                  width: 97.w,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFFA369BF),
-                      shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(20),
-                              bottomRight: Radius.circular(20))),
-                    ),
-                    onPressed: () {
-                      Get.toNamed(Routes.THIRD_PAGE);
-                    },
-                    child: CustomTxt(
-                      txt: 'Search',
-                      weight: FontWeight.w500,
-                      size: 14.sp,
-                      color: Colors.white,
-                    ),
+                blurRadius: 5.0,
+                spreadRadius: 0.5,
+              ), //BoxShadow
+              BoxShadow(
+                color: Colors.white,
+                offset: Offset(0.0, 0.0),
+                blurRadius: 0.0,
+                spreadRadius: 0.0,
+              ),
+            ]),
+        child: SizedBox(
+          height: 38.h,
+          child: TextFormField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                Icons.search,
+                size: 12.r,
+                color: Color(0xFFBABABA),
+              ),
+              // focusedBorder: OutlineInputBorder(
+              //   borderRadius: BorderRadius.only(
+              //       topLeft: Radius.circular(15.r),
+              //       bottomLeft: Radius.circular(15.r),
+              //       bottomRight: Radius.circular(30.r),
+              //       topRight: Radius.circular(30.r)),
+              //   borderSide: const BorderSide(color: Color(0xFFDDDDDD)),
+              // ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(25.r),
+                    bottomLeft: Radius.circular(25.r),
+                    bottomRight: Radius.circular(30.r),
+                    topRight: Radius.circular(30.r)),
+                borderSide: const BorderSide(color: Color(0xFFDDDDDD)),
+              ),
+              suffixIcon: SizedBox(
+                height: 58.h,
+                width: 97.w,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFA369BF),
+                    shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20),
+                            bottomRight: Radius.circular(20))),
+                  ),
+                  onPressed: () {
+                    Get.toNamed(Routes.THIRD_PAGE);
+                  },
+                  child: CustomTxt(
+                    txt: 'Search',
+                    weight: FontWeight.w500,
+                    size: 14.sp,
+                    color: Colors.white,
                   ),
                 ),
               ),

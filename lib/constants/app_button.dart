@@ -20,7 +20,7 @@ class AppButton extends StatelessWidget {
     required this.txt,
     required this.page,
     required this.background_color,
-    this.border_coor = Colors.purple,
+    this.border_coor = const Color(0xFFA369BF),
     required this.txt_color,
   });
 

@@ -57,7 +57,7 @@ class FifthPageView extends GetView<FifthPageController> {
                 const AppSearchBar(),
 
                 Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 18.0.w),
+                  padding: EdgeInsets.only(top: 10.0.h, left: 18.0.w),
                   child: CustomTxt(
                       txt: "Select Payment Method",
                       weight: FontWeight.w700,
@@ -71,10 +71,18 @@ class FifthPageView extends GetView<FifthPageController> {
                   child: Row(
                     children: [
                       SizedBox(
-                        width:120,
-                        height: 60,
+                        width: 120.w,
+                        height: 60.h,
                         child: Card(
-                            elevation: 2,
+                            elevation: 0.5,
+                            shape: const RoundedRectangleBorder(
+                              side: BorderSide(
+                                // border color
+                                color: Color(0xFFDFDFDF),
+                                // border thickness
+                                width: 1,
+                              ),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(13.0),
                               child: Image.asset(
@@ -86,10 +94,18 @@ class FifthPageView extends GetView<FifthPageController> {
                             )),
                       ),
                       SizedBox(
-                        width:120,
-                        height: 60,
+                        width: 120.w,
+                        height: 60.h,
                         child: Card(
-                            elevation: 2,
+                            elevation: 0.5,
+                            shape: RoundedRectangleBorder(
+                              side: BorderSide(
+                                // border color
+                                color: Color(0xFFDFDFDF),
+                                // border thickness
+                                width: 1,
+                              ),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset(
@@ -110,7 +126,7 @@ class FifthPageView extends GetView<FifthPageController> {
                   padding: EdgeInsets.all(8.0.r),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 57.h,
+                      height: 62.h,
                       child: AppButton(
                         txt: "Proceed with Payment",
                         page: Routes.SIXTH_PAGE,

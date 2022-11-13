@@ -20,111 +20,114 @@ class HomeView extends GetView<HomeController> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 13.h),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Card(
-                  //  color: Colors.yellowAccent,
-                    elevation: 2,
-                    child: Container(
-                      height: 150.h,
-                      width: double.maxFinite,
-                      //decoration: BoxDecoration(
-                          color: Colors.amber,
-                        //  gradient: const LinearGradient(
-                      //  begin: Alignment.topLeft,
-                       // end: Alignment(0.8, 1),
-                      //  colors: <Color>[
-                        //  Colors.red,
-                        //  Colors.blue,
-                       //   Colors.green
-                     //   ], // Gradient from https://learnui.design/tools/gradient-generator.html
-                    //    tileMode: TileMode.mirror,
-                //      ),
-                        //  borderRadius: BorderRadius.circular(15.r)
-                    //  ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0.h, left: 12.w),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      left: 0.w, top: 12.h, bottom: 9.h),
-                                  child: CustomTxt(
-                                      txt: "Pay with Reliability",
-                                      weight: FontWeight.w700,
-                                      size: 18.sp),
-                                ),
-                                const CustomTxt(
-                                    txt:
-                                        'Lorem Ipsum is simply dummy text\n of the printing and typesetting\n industry.',
-                                    weight: FontWeight.w400,
-                                    size: 12),
-                                SizedBox(
-                                  height:10.h ,
-                                ),
-                                // TextButton(onPressed: (){}, child: customtxt(txt: 'Pay Now', fontweight: FontWeight.w500, fontsize: 14.sp,))
-                                SizedBox(
-                                  width: 123.w,
-                                  height: 35.h,
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: const Color(0xFFA369BF),
-                                      shape: RoundedRectangleBorder(
-                                          borderRadius:
-                                              BorderRadius.circular(30.0.r)),
-                                    ),
-                                    onPressed: () {
-                                      Get.toNamed(Routes.SECOND_PAGE);
-                                    },
-                                    child: CustomTxt(
-                                      txt: 'Pay Now',
-                                      weight: FontWeight.w500,
-                                      size: 14.sp,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                )
-                              ],
+                child: Container(
+                  height: 167.h,
+                  //width: double.maxFinite,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: <Color>[
+                          Color(0xFFA150Df).withOpacity(0.12),
+                          Color(0xFFD9D9D9).withOpacity(0.0),
+                        ],
+                        // Gradient from https://learnui.design/tools/gradient-generator.html
+                        tileMode: TileMode.mirror,
+                      ),
+                      borderRadius: BorderRadius.circular(15.r)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(top: 8.0.h, left: 12.w),
+                        width: 185.w,
+                        // color: Colors.red,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  left: 0.w, top: 12.h, bottom: 9.h),
+                              child: CustomTxt(
+                                  txt: "Pay with Reliability",
+                                  weight: FontWeight.w700,
+                                  size: 18.sp),
                             ),
-                          ),
-                          Image.asset(
+                            CustomTxt(
+                              txt:
+                                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                              weight: FontWeight.w400,
+                              size: 11.sp,
+                              color: Color(0xFF656364),
+                            ),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            // TextButton(onPressed: (){}, child: customtxt(txt: 'Pay Now', fontweight: FontWeight.w500, fontsize: 14.sp,))
+                            SizedBox(
+                              width: 123.w,
+                              height: 42.h,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  shadowColor: Colors.white10,
+                                  backgroundColor: const Color(0xFFA369BF),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(30.0.r)),
+                                ),
+                                onPressed: () {
+                                  Get.toNamed(Routes.SECOND_PAGE);
+                                },
+                                child: CustomTxt(
+                                  txt: 'Pay Now',
+                                  weight: FontWeight.w500,
+                                  size: 14.sp,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: SizedBox(
+                          // width: 100.w,
+                          child: Image.asset(
                             "assets/img.png",
                             height: 200.h,
-                            width: 155.w,
+                            //  width: 155.w,
                           ),
-                        ],
-                      ),
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Padding(
                     padding: EdgeInsets.only(left: 20.0.w),
-                    child: const CustomTxt(
-                        txt: "Our Clients", weight: FontWeight.w500, size: 16),
+                    child: CustomTxt(
+                        txt: "Our Clients",
+                        weight: FontWeight.w500,
+                        size: 16.sp),
                   ),
                   TextButton(
                       onPressed: () {
                         Get.toNamed(Routes.SECOND_PAGE);
                       },
-                      child: const Text(
+                      child: Text(
                         'See All',
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontWeight: FontWeight.w400,
-                          color: Color(0xFFA369Bf),
-                          fontSize: 12,
+                          color: const Color(0xFFA369Bf),
+                          fontSize: 12.sp,
                         ),
                       ))
                 ],
@@ -162,9 +165,9 @@ class HomeView extends GetView<HomeController> {
                     size: 16.sp),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  left: 20.0,
-                  right: 15.0,
+                padding: EdgeInsets.only(
+                  left: 20.0.w,
+                  right: 15.0.w,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -209,8 +212,11 @@ class HomeView extends GetView<HomeController> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 8.0),
-            child: Image.asset("assets/drawer_logo.png",height: 20.h,),
+            padding: EdgeInsets.only(left: 8.0.r),
+            child: Image.asset(
+              "assets/drawer_logo.png",
+              height: 20.h,
+            ),
           ),
           SizedBox(
             width: 80.w,

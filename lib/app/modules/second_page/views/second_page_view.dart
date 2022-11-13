@@ -67,17 +67,17 @@ class SecondPageView extends GetView<SecondPageController> {
                     // Initial Value
 
                    // Down Arrow Icon
-                    icon: const Icon(Icons.arrow_drop_down),
+                    icon: const Icon(Icons.keyboard_arrow_down),
 
                     // Array list of items
-                     items: items.map((String items) {
+                    items: items.map((String items) {
                       return DropdownMenuItem(
                         value: items,
                         child: Text(items),
-                    );
-                     }).toList(),
+                      );
+                    }).toList(),
                     onChanged: (Object? value) {},
-                ),
+                  ),
                  ),
               ),
               Padding(
@@ -90,38 +90,19 @@ class SecondPageView extends GetView<SecondPageController> {
                 width: 5.h,
                ),
                ListTile(
-                 leading: Icon(Icons.person),
-                title:  TextField(
-                   decoration:
-                       InputDecoration.collapsed(
-                           hintText: "Type Your Id",
-                         hintStyle:TextStyle(
-                             color: Color(0xFF746A6A),
-                             fontFamily: "SF Pro Display",
-                             fontWeight: FontWeight.w400,
-                             fontSize: 16.sp
-                         )
-                         ,),
+                 leading: Icon(Icons.person_outline),
+                title: TextField(
+                  decoration: InputDecoration.collapsed(
+                    hintText: "Type Your Id",
+                    hintStyle: TextStyle(
+                        color: Color(0xFFD6D5D3),
+                        fontFamily: "SF Pro Display",
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16.sp),),
                   ),
 
                 minLeadingWidth: 10.w,
-                trailing: DropdownButtonHideUnderline(
-                  child: DropdownButton(
 
-                    // Initial Value
-                    // Down Arrow Icon
-                  icon: const Icon(Icons.arrow_drop_down),
-
-                   // Array list of items
-                    items: items.map((String items) {
-                    return DropdownMenuItem(
-                         value: items,
-                         child: Text(items),
-                      );
-                     }).toList(),
-                      onChanged: (Object? value) {},
-                   ),
-                ),
                ),
               Padding(
                 padding:  EdgeInsets.only(left: 8.0.w,right: 15.0.w),
@@ -161,7 +142,7 @@ class SecondPageView extends GetView<SecondPageController> {
               // ),
               SizedBox(
                   width: double.infinity,
-                  height: 55.h,
+                  height: 60.h,
                   child: AppButton(
                       txt: "Continue",
                       page: Routes.THIRD_PAGE,

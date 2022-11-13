@@ -23,8 +23,7 @@ Future<void> main() async {
           theme: ThemeData(
             //    primarySwatch: AppColors.primarySwatchColor,
             fontFamily: 'Roboto',
-            scaffoldBackgroundColor: const Color(0xFFDDDDDD)
-          ),
+            scaffoldBackgroundColor: const Color(0xFFFFFFFF)),
           getPages: AppPages.routes,
         );
       },

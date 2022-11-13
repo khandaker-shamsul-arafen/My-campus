@@ -60,7 +60,7 @@ class ThirdPageView extends GetView<ThirdPageController> {
                 //   height: 10.h,
                 // ),
                 Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 23.0.w),
+                  padding: EdgeInsets.only(top: 10.0.h, left: 23.0.w),
                   child: CustomTxt(
                       txt: "Payment List",
                       weight: FontWeight.w700,
@@ -72,14 +72,14 @@ class ThirdPageView extends GetView<ThirdPageController> {
                 Padding(
                   padding: EdgeInsets.only(top: 4.0.h, left: 23.w),
                   child: CustomTxt(
-                      txt: "Select to pay",
-                      weight: FontWeight.w400,
-                      size: 12.sp,
-                  color: const Color(0xFF959595),
+                    txt: "Select to pay",
+                    weight: FontWeight.w400,
+                    size: 12.sp,
+                    color: const Color(0xFF959595),
                   ),
                 ),
-                const SizedBox(
-                  height: 5,
+                SizedBox(
+                  height: 5.h,
                 ),
                 AppCheckBox(),
                 AppCheckBox(),
@@ -93,19 +93,29 @@ class ThirdPageView extends GetView<ThirdPageController> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(right: 8.0.r),
-                  child: const Align(
+                  child: Align(
                     alignment: Alignment.topRight,
-                    child: CustomTxt(
-                        txt: "Subtotal:  0,00 Taka",
-                        weight: FontWeight.w400,
-                        size: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        CustomTxt(
+                            txt: "Subtotal  ",
+                            weight: FontWeight.w400,
+                            size: 12.sp),
+                        CustomTxt(
+                            txt: " 0000 Taka",
+                            weight: FontWeight.w500,
+                            size: 12.sp),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 13.0.w,right: 13.0.w),
+                  padding:
+                      EdgeInsets.only(left: 13.0.w, right: 13.0.w, top: 20.h),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 57.h,
+                      height: 62.h,
                       child: AppButton(
                           txt: "Pay All",
                           page: Routes.FOURTH_PAGE,
@@ -133,13 +143,13 @@ class ThirdPageView extends GetView<ThirdPageController> {
                   padding: EdgeInsets.only(left: 13.0.w,right: 13.0.h),
                   child: SizedBox(
                       width: double.infinity,
-                      height: 57.h,
+                      height: 62.h,
                       child: AppButton(
                         txt: "Pay Selected Ones",
                         page: Routes.FOURTH_PAGE,
                         background_color: Colors.white,
                         txt_color: Color(0xFFA369BF),
-                        border_coor: Colors.purpleAccent,
+                        border_coor: Color(0xFFA369BF),
                       )
                       // ElevatedButton(
                       //   style: ElevatedButton.styleFrom(
