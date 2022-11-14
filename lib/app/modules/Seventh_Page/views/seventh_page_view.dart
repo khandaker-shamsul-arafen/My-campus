@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:my_campus/constants/app_text_style.dart';
 
 import '../../../../constants/app_button.dart';
+import '../../../../constants/app_color.dart';
 import '../../../../constants/app_textfield.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/seventh_page_controller.dart';
@@ -216,23 +218,37 @@ class SeventhPageView extends GetView<SeventhPageController> {
                     thickness: 2,
                     color: Color(0xFFA1A1A1),
                   ),
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: CustomTxt(
-                        txt: "Subtotal:  7,00 Taka",
-                        weight: FontWeight.w400,
-                        size: 12.sp),
-                  ),
+                  Padding(
+                      padding: EdgeInsets.only(right: 8.0.w),
+                      child: Align(
+                        alignment: Alignment.topRight,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              "Subtotal",
+                              style: textHintColor124Font(),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                              child: Text(
+                                "7000",
+                                style: textButtonColor145Font(
+                                    color: AppColor.txtblackColor,
+                                    fontSize: 12.sp),
+                              ),
+                            )
+                          ],
+                        ),
+                      )),
                   SizedBox(
                     height: 40.h,
                   ),
                   Center(
-                      child: CustomTxt(
-                    txt: "No attached files",
-                    weight: FontWeight.w400,
-                    size: 13.sp,
-                    color: const Color(0xFFB8B8B8),
-                  )),
+                      child: Text("No attached files",
+                          style: textHintColor124Font(
+                              color: const Color(0xFFB8B8B8)))),
                   SizedBox(
                     height: 40.h,
                   ),
@@ -264,30 +280,12 @@ class SeventhPageView extends GetView<SeventhPageController> {
 
   AppBar appbarDesign() {
     return AppBar(
-      elevation: 0,
       centerTitle: true,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            "assets/appbar-logo.png",
-            height: AppBar().preferredSize.height - 16.h,
-          ),
-          SizedBox(
-            width: 5.h,
-          ),
-          CustomTxt(
-            txt: "My Campus",
-            weight: FontWeight.w700,
-            size: 16.sp,
-            //dsf: GoogleFonts.getFont('Gorditas'),
-            color: Colors.purple,
-          ),
-          SizedBox(
-            width: 3.w,
-          ),
-        ],
+      elevation: 0,
+      title: Image.asset(
+        "assets/img_1.png",
+        height: 23.h,
+        width: 128.w,
       ),
       backgroundColor: Colors.white,
       iconTheme: const IconThemeData(color: Color(0xFF4F4F4F)),

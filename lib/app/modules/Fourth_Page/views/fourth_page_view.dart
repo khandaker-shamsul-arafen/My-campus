@@ -4,7 +4,10 @@ import 'package:get/get.dart';
 
 import '../../../../constants/AppCheckBox.dart';
 import '../../../../constants/app_button.dart';
+import '../../../../constants/app_color.dart';
+import '../../../../constants/app_constraints.dart';
 import '../../../../constants/app_searchbar.dart';
+import '../../../../constants/app_text_style.dart';
 import '../../../../constants/app_textfield.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/fourth_page_controller.dart';
@@ -22,40 +25,7 @@ class FourthPageView extends GetView<FourthPageController> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Image.asset(
-                      "assets/baf_shaheen.png",
-                      height: 70.h,
-                      width: 70.w,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomTxt(
-                            txt: "BAF Shaheen College, Dhaka",
-                            weight: FontWeight.w500,
-                            size: 18.sp),
-                        CustomTxt(
-                          txt: "1145908",
-                          weight: FontWeight.w400,
-                          size: 14.sp,
-                          color: Color(0xFF838282),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 18.0.w, right: 18.0.w),
-                  child: Image.asset(
-                    'assets/baf_shaheen_college.png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-
-                const AppSearchBar(),
+              const AppSearchBar(),
                 // SizedBox(
                 //   height: 10.h,
                 // ),
@@ -67,8 +37,8 @@ class FourthPageView extends GetView<FourthPageController> {
                 SizedBox(
                   height: 2.h,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: 4.0.h, left: 27.w),
+              Padding(
+                padding: EdgeInsets.only(top: 4.0.h, left: 27.w),
                 child: CustomTxt(
                   txt: "Select to pay",
                   weight: FontWeight.w400,
@@ -77,35 +47,55 @@ class FourthPageView extends GetView<FourthPageController> {
                 ),
               ),
 
-              AppCheckBox(),
-                AppCheckBox(),
-                AppCheckBox(),
-                AppCheckBox(),
-                Padding(
-                  padding: EdgeInsets.only(left: 18.0.w, right: 10.0.sp),
-                  child: const Divider(
-                    thickness: 1,
-                  ),
+              AppCheckBox(
+                txt: 'Monthly Tution Fee',
+                number: 5000,
+              ),
+              AppCheckBox(
+                txt: 'Yearly Admission Fee',
+                number: 4000,
+              ),
+              AppCheckBox(
+                txt: 'First Term Exam Fee',
+                number: 3000,
+              ),
+              AppCheckBox(
+                txt: 'First Term Exam Fee',
+                number: 4000,
+              ),
+
+              Padding(
+                padding: EdgeInsets.only(
+                    left: lftmainPadding.w + 10.w,
+                    right: rgtmainPadding,
+                    top: topmainPadding.h - 4.h),
+                child: const Divider(
+                  thickness: 1,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: 8.0.r),
-                  child: Align(
+              ),
+              Padding(
+                  padding: EdgeInsets.only(right: 8.0.w),
+                child: Align(
                   alignment: Alignment.topRight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      CustomTxt(
-                          txt: "Subtotal  ",
-                          weight: FontWeight.w400,
-                          size: 12.sp),
-                      CustomTxt(
-                          txt: " 7000 Taka",
-                          weight: FontWeight.w500,
-                          size: 12.sp),
+                      Text(
+                        "Subtotal",
+                        style: textHintColor124Font(),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                        child: Text(
+                          "7000",
+                          style: textButtonColor145Font(
+                              color: AppColor.txtblackColor, fontSize: 12.sp),
+                        ),
+                      )
                     ],
                   ),
                 ),
-                ),
+              ),
                 Padding(
                   padding:
                     EdgeInsets.only(left: 13.0.w, right: 13.0.w, top: 15.h),
@@ -143,30 +133,12 @@ class FourthPageView extends GetView<FourthPageController> {
 
   AppBar appbarDesign() {
     return AppBar(
-      elevation: 0,
       centerTitle: true,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Image.asset(
-            "assets/appbar-logo.png",
-            height: AppBar().preferredSize.height - 16.h,
-          ),
-          SizedBox(
-            width: 5.h,
-          ),
-          CustomTxt(
-            txt: "My Campus",
-            weight: FontWeight.w700,
-            size: 16.sp,
-            //dsf: GoogleFonts.getFont('Gorditas'),
-            color: Colors.purple,
-          ),
-          SizedBox(
-            width: 3.w,
-          ),
-        ],
+      elevation: 0,
+      title: Image.asset(
+        "assets/img_1.png",
+        height: 23.h,
+        width: 128.w,
       ),
       backgroundColor: Colors.white,
       iconTheme: const IconThemeData(color: Color(0xFF4F4F4F)),

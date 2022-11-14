@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-
-import 'app_textfield.dart';
+import 'package:my_campus/constants/app_constraints.dart';
+import 'package:my_campus/constants/app_text_style.dart';
 
 class AppButton extends StatelessWidget {
   final String txt;
@@ -21,18 +21,19 @@ class AppButton extends StatelessWidget {
     required this.page,
     required this.background_color,
     this.border_coor = const Color(0xFFA369BF),
-    required this.txt_color,
+    this.txt_color = const Color(0xFFA369BF),
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.only(
+          top: 8.0.h, left: lftmainPadding.w, right: rgtmainPadding.w),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             backgroundColor: background_color,
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30.0)),
             side: BorderSide(
               width: 1.0,
               color: border_coor,
@@ -40,11 +41,9 @@ class AppButton extends StatelessWidget {
         onPressed: () {
           Get.toNamed(page);
         },
-        child: CustomTxt(
-          txt: txt,
-          weight: FontWeight.w500,
-          size: 14.sp,
-          color: txt_color,
+        child: Text(
+          txt,
+          style: textButtonColor145Font(color: txt_color),
         ),
       ),
     );
