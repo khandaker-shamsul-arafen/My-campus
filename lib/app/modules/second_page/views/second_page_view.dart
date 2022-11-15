@@ -89,59 +89,62 @@ class SecondPageView extends GetView<SecondPageController> {
       ),
     );
   }
-}
 
-Widget Institute(
-  String icon,
-  String txt,
-  bool dropdowne,
-) {
-  var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
-  return ListTile(
-    leading: Image.asset(
-      icon,
-      height: 19.h,
-      width: 19.w,
-    ),
-    title: Transform.translate(
-      offset: Offset(-16, 0),
-      child: TextField(
-        decoration: InputDecoration.collapsed(
-          hintText: txt,
-          hintStyle: textHintColor124Font(
-              fontSize: 16, color: const Color(0xFF746A6A)),
-        ),
+  Widget Institute(
+    String icon,
+    String txt,
+    bool dropdowne,
+  ) {
+    return ListTile(
+      leading: Image.asset(
+        icon,
+        height: 19.h,
+        width: 19.w,
       ),
-    ),
-    trailing: (dropdowne)
-        ? DropdownButtonHideUnderline(
-            child: DropdownButton(
-              // Initial Value
-
-              // Down Arrow Icon
-              icon: const Icon(Icons.keyboard_arrow_down),
-
-              // Array list of items
-              items: items.map((String items) {
-                return DropdownMenuItem(
-                  value: items,
-                  child: Text(items),
-                );
-              }).toList(),
-              onChanged: (Object? value) {},
+      title: (dropdowne)
+          ? Obx(() {
+              return Text(controller.dropdownValue.value);
+            })
+          : Transform.translate(
+              offset: const Offset(-16, 0),
+              child: TextField(
+                decoration: InputDecoration.collapsed(
+                  hintText: txt,
+                  hintStyle: textHintColor124Font(
+                      fontSize: 16, color: const Color(0xFF746A6A)),
+                ),
+              ),
             ),
-          )
-        : SizedBox(
-            width: 1.w,
-          ),
-  );
+      trailing: (dropdowne)
+          ? DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                // value:  controller.dropdownValue.value,
+                // Initial Value
+
+                // Down Arrow Icon
+                icon: const Icon(Icons.keyboard_arrow_down),
+
+                // Array list of items
+                items: controller.options
+                    .map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  controller.dropdownValue.value = newValue ?? "";
+                  debugPrint(controller.dropdownValue.value);
+                },
+              ),
+            )
+          : SizedBox(
+              width: 1.w,
+            ),
+    );
+  }
 }
+
 
 AppBar appbarDesign() {
   return AppBar(

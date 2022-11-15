@@ -32,7 +32,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                             fontSize: 17.sp, color: const Color(0xFFA369BF)),
                       )),
                   // SizedBox(
-                  //   height: 10.h,
+                  //   height : 10.h,
                   // ),
                   Padding(
                     padding: EdgeInsets.only(top: topmainPadding.h - 9.0.h),
@@ -229,7 +229,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                         height: 62.h,
                         child: AppButton(
                             txt: "Back to Profile",
-                            page: Routes.SEVENTH_PAGE,
+                            page: Routes.EIGHT_PAGE,
                             background_color: Colors.white,
                             txt_color: Color(0xFFA369BF))),
                   ),
