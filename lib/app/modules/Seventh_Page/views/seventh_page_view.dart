@@ -43,7 +43,10 @@ class SeventhPageView extends GetView<SeventhPageController> {
                         child: Container(
                           height: 80.h,
                           width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(color: Color(0xFFDDDDDD)),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFDDDDDD).withOpacity(0.67),
+                            borderRadius: BorderRadius.circular(2.76),
+                          ),
                           child: Padding(
                             padding: EdgeInsets.all(8.0.r),
                             child: Column(
@@ -202,7 +205,9 @@ class SeventhPageView extends GetView<SeventhPageController> {
                     child: Center(
                         child: Text("No attached files",
                             style: textHintColor124Font(
-                                color: const Color(0xFFB8B8B8)))),
+                                color:
+                                    const Color(0xFF4F4F4F).withOpacity(0.40),
+                                fontSize: 14.sp))),
                   ),
 
                   Padding(
