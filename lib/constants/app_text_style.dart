@@ -10,11 +10,14 @@ textHintColor124Font({
   return TextStyle(fontWeight: weight, fontSize: fontSize.sp, color: color);
 }
 
-textColor187Font({weight = FontWeight.w700, double fontSize = 18}) {
+textColor187Font(
+    {weight = FontWeight.w700,
+    double fontSize = 18,
+    Color color = AppColor.txtblackColor}) {
   return TextStyle(
     fontWeight: weight,
     fontSize: fontSize.sp,
-    color: AppColor.txtblackColor,
+    color: color,
   );
 }
 
