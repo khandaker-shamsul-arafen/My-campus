@@ -137,27 +137,27 @@ class HomeView extends GetView<HomeController> {
                   child: SizedBox(
                     height: 120.h,
                     width: Get.width,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemBuilder: (BuildContext context, int index) {
-                        return Row(
-                          children: [
-                            ourClientDesign("Titumir College",
-                                'assets/titumir_college.png'),
-                            ourClientDesign(
-                                "BAF Shaheen", 'assets/baf_shaheen.png'),
-                            ourClientDesign("Govt.Keshab chandra College",
-                                'assets/chandra.png'),
-                          ],
-                        );
-                      },
-                      separatorBuilder: (BuildContext context, int index) {
-                        return SizedBox(
-                          width: padding12.w,
-                        );
-                      },
-                      itemCount: 2,
-                    ),
+                    child: Obx(() {
+                      return ListView.separated(
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (BuildContext context, int index) {
+                          return Row(
+                            children: [
+                              ourClientDesign(
+                                controller.collegeList[index].name,
+                                controller.collegeList[index].image,
+                              ),
+                            ],
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: padding12.w,
+                          );
+                        },
+                        itemCount: controller.collegeList.length,
+                      );
+                    }),
                   ),
                 ),
                 Padding(

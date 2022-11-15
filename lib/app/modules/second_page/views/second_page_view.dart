@@ -10,7 +10,7 @@ import '../../../routes/app_pages.dart';
 import '../controllers/second_page_controller.dart';
 
 class SecondPageView extends GetView<SecondPageController> {
-  SecondPageView({Key? key}) : super(key: key);
+  const SecondPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,7 @@ class SecondPageView extends GetView<SecondPageController> {
               Padding(
                 padding: EdgeInsets.only(
                     left: lftmainPadding.w, right: rgtmainPadding.w - 5.w),
-                child: Divider(
+                child: const Divider(
                   thickness: 1,
                 ),
               ),

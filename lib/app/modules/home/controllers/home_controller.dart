@@ -1,12 +1,18 @@
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  //TODO: Implement HomeController
+import '../../../../model/college_model.dart';
 
-  final count = 0.obs;
+class HomeController extends GetxController {
+  var collegeList = <CollegeModel>[].obs;
 
   @override
   void onInit() {
+    collegeList
+        .add(CollegeModel("Titumir College", 'assets/titumir_college.png'));
+    collegeList.add(CollegeModel("BAF Shaheen", 'assets/baf_shaheen.png'));
+    collegeList.add(
+        CollegeModel("Govt. Keshab chandra College", 'assets/chandra.png'));
+
     super.onInit();
   }
 
@@ -19,6 +25,4 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }
