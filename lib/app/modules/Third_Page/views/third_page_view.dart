@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
 import 'package:my_campus/constants/app_color.dart';
 import 'package:my_campus/constants/app_constraints.dart';
 import 'package:my_campus/constants/app_text_style.dart';
 
+import '../../../../AppBar.dart';
 import '../../../../constants/AppCheckBox.dart';
-import '../../../../constants/app_button.dart';
 import '../../../../constants/app_searchbar.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/third_page_controller.dart';
@@ -16,31 +17,28 @@ class ThirdPageView extends GetView<ThirdPageController> {
 
   @override
   Widget build(BuildContext context) {
+    final flag = Get.put(ThirdPageController());
     return Scaffold(
-        appBar: appbarDesign(),
+        appBar: appbarDesign(false),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Padding(
               padding: EdgeInsets.only(
-                  top: 8.0.h,
-                  left: lftmainPadding.w - 4.w,
-                  right: rgtmainPadding.w - 4.w),
+                  top: 8.0.h, left: leftMainPadding, right: rightMainPadding),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const AppSearchBar(),
                   Padding(
-                    padding: EdgeInsets.only(
-                        top: topmainPadding.h - 10.h, left: lftmainPadding.w),
+                    padding: EdgeInsets.only(top: 15.0.h),
                     child: Text(
                       "Payment List",
                       style: textColor187Font(),
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsets.only(top: 6.0.h, left: lftmainPadding.w),
+                    padding: EdgeInsets.only(top: 6.h),
                     child: Text(
                       "Select to pay",
                       style: textButtonColor145Font(
@@ -49,34 +47,30 @@ class ThirdPageView extends GetView<ThirdPageController> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.only(top: 5.0.h),
-                    child: Column(
-                      children: [
-                        AppCheckBox(
-                          txt: 'Monthly Tution Fee',
-                          number: 5000,
-                        ),
-                        AppCheckBox(
-                          txt: 'Yearly Admission Fee',
-                          number: 4000,
-                        ),
-                        AppCheckBox(
-                          txt: 'First Term Exam Fee',
-                          number: 3000,
-                        ),
-                        AppCheckBox(
-                          txt: 'Monthly Tution Fee',
-                          number: 4000,
-                        ),
-                      ],
-                    ),
-                  ),
+                  Obx(() {
+                    return SizedBox(
+                      height: 120.h,
+                      child: ListView.separated(
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          return AppCheckBox(
+                            txt: flag.fees[index].fee,
+                            number: flag.fees[index].amount,
+                          );
+                        },
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            width: Padding12.w,
+                          );
+                        },
+                        itemCount: controller.fees.length,
+                      ),
+                    );
+                  }),
                   Padding(
                     padding: EdgeInsets.only(
-                        left: lftmainPadding.w + 10.w,
-                        right: rgtmainPadding,
-                        top: topmainPadding.h - 4.h),
+                        right: rightMainPadding - 8.w,
+                        top: topMainPadding.h - 14.h),
                     child: const Divider(
                       thickness: 1,
                     ),
@@ -106,30 +100,31 @@ class ThirdPageView extends GetView<ThirdPageController> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        EdgeInsets.only(left: 13.0.w, right: 13.0.w, top: 20.h),
+                    padding: EdgeInsets.only(top: 20.h),
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppButton(
-                            txt: "Pay All",
-                            page: Routes.FOURTH_PAGE,
-                            background_color: const Color(0xFFA369BF),
-                            txt_color: Colors.white)
+                        child: AppBarView(
+                          txt: "Pay All",
+                          page: Routes.FIFTH_PAGE,
+                          background_color: const Color(0xFFA369BF),
+                          txt_color: Colors.white,
+                          border_coor: const Color(0xFFA369BF),
+                        )
                         //
                         ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 13.0.w, right: 13.0.h),
+                    padding: EdgeInsets.only(top: 12.h),
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppButton(
+                        child: AppBarView(
                           txt: "Pay Selected Ones",
                           page: Routes.FOURTH_PAGE,
                           background_color: Colors.white,
-                          txt_color: Color(0xFFA369BF),
-                          border_coor: Color(0xFFA369BF),
+                          txt_color: const Color(0xFFA369BF),
+                          border_coor: const Color(0xFFA369BF),
                         )
                         //
                         ),
@@ -140,18 +135,4 @@ class ThirdPageView extends GetView<ThirdPageController> {
           ),
         ));
   }
-}
-
-AppBar appbarDesign() {
-  return AppBar(
-    centerTitle: true,
-    elevation: 0,
-    title: Image.asset(
-      "assets/img_1.png",
-      height: 23.h,
-      width: 128.w,
-    ),
-    backgroundColor: Colors.white,
-    iconTheme: const IconThemeData(color: Color(0xFF4F4F4F)),
-  );
 }

@@ -12,6 +12,10 @@ abstract class Routes {
   static const SIXTH_PAGE = _Paths.SIXTH_PAGE;
   static const SEVENTH_PAGE = _Paths.SEVENTH_PAGE;
   static const EIGHT_PAGE = _Paths.EIGHT_PAGE;
+  static const CLIENT_DETAILS = _Paths.CLIENT_DETAILS;
+
+  // static const APP_BAR = _Paths.APP_BAR;
+  static const BUTTON_VIEW = _Paths.BUTTON_VIEW;
 }
 
 abstract class _Paths {
@@ -25,4 +29,8 @@ abstract class _Paths {
   static const SIXTH_PAGE = '/sixth-page';
   static const SEVENTH_PAGE = '/seventh-page';
   static const EIGHT_PAGE = '/eight-page';
+  static const CLIENT_DETAILS = '/client-details';
+
+  // static const APP_BAR = '/app-bar';
+  static const BUTTON_VIEW = '/button-view';
 }

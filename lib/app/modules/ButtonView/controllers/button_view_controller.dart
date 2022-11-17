@@ -1,9 +1,8 @@
 import 'package:get/get.dart';
 
-class FifthPageController extends GetxController {
-  //TODO: Implement FifthPageController
-final flagbkash = false.obs;
-  final flagekpay = false.obs;
+class ButtonViewController extends GetxController {
+  //TODO: Implement ButtonViewController
+
   final count = 0.obs;
 
   @override

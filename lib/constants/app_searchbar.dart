@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import 'package:my_campus/constants/app_constraints.dart';
 
 import '../app/routes/app_pages.dart';
 import 'app_text_style.dart';
@@ -18,46 +17,37 @@ class AppSearchBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 6.0),
-          child: Row(
-            children: [
-              Image.asset(
-                "assets/baf_shaheen.png",
-                height: 60.h,
-                width: 60.w,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "BAF Shaheen College, Dhaka",
-                    style: textButtonColor145Font(
-                        fontSize: 18, color: const Color(0xFF403F3F)),
-                  ),
-                  Text(
-                    "1145908",
-                    style: textHintColor124Font(
-                        fontSize: 14.sp, color: const Color(0xFF838282)),
-                  )
-                ],
-              )
-            ],
-          ),
+        Row(
+          children: [
+            Image.asset(
+              "assets/baf_shaheen.png",
+              height: 60.h,
+              width: 60.w,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "BAF Shaheen College, Dhaka",
+                  style: textButtonColor145Font(
+                      fontSize: 18, color: const Color(0xFF403F3F)),
+                ),
+                Text(
+                  "1145908",
+                  style: textHintColor124Font(
+                      fontSize: 14.sp, color: const Color(0xFF838282)),
+                )
+              ],
+            )
+          ],
+        ),
+        Image.asset(
+          'assets/baf_shaheen_college.png',
+          fit: BoxFit.contain,
         ),
         Padding(
-          padding: EdgeInsets.only(left: 18.0.w, right: 18.0.w),
-          child: Image.asset(
-            'assets/baf_shaheen_college.png',
-            fit: BoxFit.contain,
-          ),
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-              left: lftmainPadding.w + 7.w,
-              right: rgtmainPadding.w - 4.w,
-              top: 8.h),
+          padding: EdgeInsets.only(top: 14.0.h),
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25.r),
@@ -79,9 +69,10 @@ class AppSearchBar extends StatelessWidget {
                   ),
                 ]),
             child: SizedBox(
-              height: 38.h,
+              height: 44.h,
               child: TextFormField(
                 decoration: InputDecoration(
+                  border: InputBorder.none,
                   prefixIcon: Icon(
                     Icons.search,
                     size: 12.r,

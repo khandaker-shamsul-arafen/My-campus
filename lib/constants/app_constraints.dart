@@ -1,6 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-double lftmainPadding = 10.w;
-double rgtmainPadding = 20.w;
-double topmainPadding = 20.w;
-double padding12 = 12.h;
+double leftMainPadding = 20.w;
+double rightMainPadding = 20.w;
+double topMainPadding = 20.w;
+double Padding12 = 12.h;

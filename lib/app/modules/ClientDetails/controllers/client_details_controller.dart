@@ -2,12 +2,10 @@ import 'package:get/get.dart';
 
 import '../../home/controllers/home_controller.dart';
 
-class SecondPageController extends GetxController {
-  //TODO: Implement SecondPageControlle
-  //List<String> options = <String>['One', 'Two', 'Free', 'Four'];
-  var homeController = Get.find<HomeController>();
+class ClientDetailsController extends GetxController {
+  //TODO: Implement ClientDetailsController
+  var clientController = Get.find<HomeController>();
 
-  var dropdownValue = "Select your Institute".obs;
   final count = 0.obs;
 
   @override

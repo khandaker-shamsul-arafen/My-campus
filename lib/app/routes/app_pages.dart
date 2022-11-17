@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/ClientDetails/bindings/client_details_binding.dart';
+import '../modules/ClientDetails/views/client_details_view.dart';
 import '../modules/Eight_Page/bindings/eight_page_binding.dart';
 import '../modules/Eight_Page/views/eight_page_view.dart';
 import '../modules/Fifth_page/bindings/fifth_page_binding.dart';
@@ -65,5 +67,20 @@ class AppPages {
       page: () => const EightPageView(),
       binding: EightPageBinding(),
     ),
+    GetPage(
+      name: _Paths.CLIENT_DETAILS,
+      page: () => const ClientDetailsView(),
+      binding: ClientDetailsBinding(),
+    ),
+    // GetPage(
+    //   name: _Paths.APP_BAR,
+    //   page: () => AppBarView(txt: '', page: '', background_color: Colors.white, border_coor: const Color(0xFFA369BF), txt_color: const Color(0xFFA369BF),),
+    //   binding: AppBarBinding(),
+    // ),
+    // GetPage(
+    //   name: _Paths.BUTTON_VIEW,
+    //   page: () => const ButtonViewView(),
+    //   binding: ButtonViewBinding(),
+    // ),
   ];
 }

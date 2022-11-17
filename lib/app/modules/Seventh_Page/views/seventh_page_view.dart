@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
 import 'package:my_campus/constants/app_text_style.dart';
 
-import '../../../../constants/app_button.dart';
+import '../../../../AppBar.dart';
 import '../../../../constants/app_color.dart';
 import '../../../../constants/app_constraints.dart';
 import '../../../routes/app_pages.dart';
@@ -15,73 +16,67 @@ class SeventhPageView extends GetView<SeventhPageController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: appbarDesign(),
+        appBar: appbarDesign(false),
         body: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(
-                left: lftmainPadding.w, right: rgtmainPadding.w - 10.w),
+            padding:
+                EdgeInsets.only(left: leftMainPadding, right: rightMainPadding),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                      padding: EdgeInsets.only(left: lftmainPadding.w - 1.0.w),
-                      child: Text(
-                        "INVOICE",
-                        style: textButtonColor145Font(
-                            fontSize: 17.sp, color: const Color(0xFFA369BF)),
-                      )),
+                  Text(
+                    "INVOICE",
+                    style: textButtonColor145Font(
+                        fontSize: 17.sp, color: const Color(0xFFA369BF)),
+                  ),
                   // SizedBox(
                   //   height : 10.h,
                   // ),
                   Padding(
-                    padding: EdgeInsets.only(top: topmainPadding.h - 9.0.h),
+                    padding: EdgeInsets.only(top: 10.0.h),
                     child: Stack(children: [
-                      Padding(
-                        padding: EdgeInsets.only(
-                            left: lftmainPadding.w - 2.w, right: 1.0.w),
-                        child: Container(
-                          height: 80.h,
-                          width: MediaQuery.of(context).size.width,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFDDDDDD).withOpacity(0.67),
-                            borderRadius: BorderRadius.circular(2.76),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(8.0.r),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "Bill To",
+                      Container(
+                        height: 80.h,
+                        width: MediaQuery.of(context).size.width,
+                        decoration: BoxDecoration(
+                          color: const Color(0xFFDDDDDD).withOpacity(0.67),
+                          borderRadius: BorderRadius.circular(2.76),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(8.0.r),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Bill To",
+                                style: textButtonColor145Font(
+                                    fontSize: 15.sp,
+                                    color: AppColor.txtblackColor,
+                                    weight: FontWeight.w600),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: topMainPadding.h - 18.h),
+                                child: Text(
+                                  "ID: 1145908",
                                   style: textButtonColor145Font(
                                       fontSize: 15.sp,
                                       color: AppColor.txtblackColor,
-                                      weight: FontWeight.w600),
+                                      weight: FontWeight.w500),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: topmainPadding.h - 18.h),
-                                  child: Text(
-                                    "ID: 1145908",
-                                    style: textButtonColor145Font(
-                                        fontSize: 15.sp,
-                                        color: AppColor.txtblackColor,
-                                        weight: FontWeight.w400),
-                                  ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(
+                                    top: topMainPadding.h - 17.h),
+                                child: Text(
+                                  "Institute: BAF Shaheen College Dhaka",
+                                  style: textButtonColor145Font(
+                                      fontSize: 15.sp,
+                                      color: AppColor.txtblackColor),
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(
-                                      top: topmainPadding.h - 17.h),
-                                  child: Text(
-                                    "Institute: BAF Shaheen College Dhaka",
-                                    style: textButtonColor145Font(
-                                        fontSize: 15.sp,
-                                        color: AppColor.txtblackColor),
-                                  ),
-                                )
-                              ],
-                            ),
+                              )
+                            ],
                           ),
                         ),
                       ),
@@ -101,7 +96,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                                   ),
                                   child: Padding(
                                       padding: EdgeInsets.only(
-                                          left: lftmainPadding.w + 5.w),
+                                          left: leftMainPadding.w + 5.w),
                                       child: Text(
                                         "PAID",
                                         style: textButtonColor145Font(
@@ -114,9 +109,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                   ),
 
                   Padding(
-                      padding: EdgeInsets.only(
-                          left: lftmainPadding.w - 2.w,
-                          top: topmainPadding.h - 10.h),
+                      padding: EdgeInsets.only(top: 10.h),
                       child: Text(
                         "Detailed Information",
                         style: textButtonColor145Font(
@@ -124,10 +117,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                       )),
 
                   Padding(
-                    padding: EdgeInsets.only(
-                        left: lftmainPadding.w - 1.w,
-                        right: rgtmainPadding.w - 14.w,
-                        top: topmainPadding.h - 10.h),
+                    padding: EdgeInsets.only(top: 10.h),
                     child: Column(
                       children: [
                         Row(
@@ -166,39 +156,32 @@ class SeventhPageView extends GetView<SeventhPageController> {
                   details_information("Monthly Tution Fee", "0%", 4000),
                   details_information("Yearly Tution Fee", "0%", 3000),
 
-                  Padding(
-                    padding: EdgeInsets.only(
-                        left: lftmainPadding.w, right: rgtmainPadding.w - 15.h),
-                    child: const Divider(
-                      thickness: 2,
-                      color: Color(0xFFA1A1A1),
+                  const Divider(
+                    thickness: 2,
+                    color: Color(0xFFA1A1A1),
+                  ),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "Subtotal",
+                          style: textHintColor124Font(fontSize: 14.sp),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            left: leftMainPadding.w,
+                          ),
+                          child: Text(
+                            "7000",
+                            style: textButtonColor145Font(
+                                color: AppColor.txtblackColor, fontSize: 14.sp),
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Padding(
-                      padding: EdgeInsets.only(right: rgtmainPadding.w - 8.w),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              "Subtotal",
-                              style: textHintColor124Font(fontSize: 14.sp),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                left: lftmainPadding.w,
-                              ),
-                              child: Text(
-                                "7000",
-                                style: textButtonColor145Font(
-                                    color: AppColor.txtblackColor,
-                                    fontSize: 14.sp),
-                              ),
-                            )
-                          ],
-                        ),
-                      )),
 
                   Padding(
                     padding: EdgeInsets.only(top: 44.0.h),
@@ -215,23 +198,27 @@ class SeventhPageView extends GetView<SeventhPageController> {
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppButton(
-                            txt: "Download Invoice PDF",
-                            page: Routes.SEVENTH_PAGE,
-                            background_color: const Color(0xFFA369BF),
-                            txt_color: Colors.white)),
+                        child: AppBarView(
+                          txt: "Download Invoice PDF",
+                          page: Routes.SEVENTH_PAGE,
+                          background_color: const Color(0xFFA369BF),
+                          txt_color: Colors.white,
+                          border_coor: const Color(0xFFA369BF),
+                        )),
                   ),
 
                   Padding(
-                    padding: EdgeInsets.only(top: 3.0.h),
+                    padding: EdgeInsets.only(top: 15.0.h),
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppButton(
-                            txt: "Back to Profile",
-                            page: Routes.EIGHT_PAGE,
-                            background_color: Colors.white,
-                            txt_color: Color(0xFFA369BF))),
+                        child: AppBarView(
+                          txt: "Back to Profile",
+                          page: Routes.EIGHT_PAGE,
+                          background_color: Colors.white,
+                          txt_color: Color(0xFFA369BF),
+                          border_coor: const Color(0xFFA369BF),
+                        )),
                   ),
                 ],
               ),
@@ -242,10 +229,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
 
   Widget details_information(String text, String percent, int number) {
     return Padding(
-      padding: EdgeInsets.only(
-          left: lftmainPadding.w - 1.w,
-          right: rgtmainPadding.w - 14.w,
-          top: topmainPadding.h - 12.h),
+      padding: EdgeInsets.only(top: 10.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -272,20 +256,6 @@ class SeventhPageView extends GetView<SeventhPageController> {
           )
         ],
       ),
-    );
-  }
-
-  AppBar appbarDesign() {
-    return AppBar(
-      centerTitle: true,
-      elevation: 0,
-      title: Image.asset(
-        "assets/img_1.png",
-        height: 23.h,
-        width: 128.w,
-      ),
-      backgroundColor: Colors.white,
-      iconTheme: const IconThemeData(color: Color(0xFF4F4F4F)),
     );
   }
 }
