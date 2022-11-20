@@ -8,7 +8,7 @@ import '../../../../constants/app_constraints.dart';
 import '../../../../constants/app_searchbar.dart';
 import '../../../../constants/app_text_style.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/sixth_page_controller.dart';
+import '../controllers/invoice_page_controller.dart';
 
 class SixthPageView extends GetView<SixthPageController> {
   const SixthPageView({Key? key}) : super(key: key);

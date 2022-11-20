@@ -1,6 +1,6 @@
 // import 'package:get/get.dart';
 //
-// import '../../Fifth_page/controllers/fifth_page_controller.dart';
+// import '../../Fifth_page/controllers/paymentMethod_page_controller.dart';
 //
 // class AppBarController extends GetxController {
 //   //TODO: Implement AppBarController

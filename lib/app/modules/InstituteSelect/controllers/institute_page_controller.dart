@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../home/controllers/home_controller.dart';
 
-class SecondPageController extends GetxController {
+class InstitutePageController extends GetxController {
   //TODO: Implement SecondPageControlle
   //List<String> options = <String>['One', 'Two', 'Free', 'Four'];
   var homeController = Get.find<HomeController>();

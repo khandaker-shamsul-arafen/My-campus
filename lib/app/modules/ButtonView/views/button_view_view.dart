@@ -3,34 +3,30 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '../../../../constants/app_text_style.dart';
-import '../../Fifth_page/controllers/fifth_page_controller.dart';
+import '../../paymentMethod_page/controllers/paymentMethod_page_controller.dart';
 import '../controllers/button_view_controller.dart';
 
 class ButtonViewView extends GetView<ButtonViewController> {
   final String txt;
   final String page;
-  final Color background_color;
-  final Color border_coor;
-  final Color txt_color;
+  final Color backgroundColor;
+  final Color borderCoor;
+  final Color txtColor;
 
-  ButtonViewView({
+  const ButtonViewView({
+    super.key,
     required this.txt,
     required this.page,
-    required this.background_color,
-    required this.border_coor,
-    required this.txt_color,
+    required this.backgroundColor,
+    required this.borderCoor,
+    required this.txtColor,
   });
 
   @override
   Widget build(BuildContext context) {
-    final flag = Get.put(FifthPageController());
+    final flag = Get.put(PaymentMethodPageController());
     return Scaffold(
-      body:
-
-          // this.border_coor = const Color(0xFFA369BF),
-          //   this.txt_color = const Color(0xFFA369BF),
-
-          Obx(() {
+      body: Obx(() {
         return SizedBox(
           height: 60.h,
           width: double.infinity,
@@ -40,24 +36,23 @@ class ButtonViewView extends GetView<ButtonViewController> {
                     ? const Color(0xFFA150DF)
                     : (flag.flagekpay.value)
                         ? const Color(0xFFA150DF)
-                        : Color(0xFFDDDDDD),
+                        : const Color(0xFFDDDDDD),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0)),
                 side: BorderSide(
                   width: 1.0,
-                  color: border_coor,
+                  color: borderCoor,
                 )),
             onPressed: () {
               Get.toNamed(page);
             },
             child: Text(
               txt,
-              style: textButtonColor145Font(color: txt_color),
+              style: textButtonColor145Font(color: txtColor),
             ),
           ),
         );
       }),
     );
-    ;
   }
 }

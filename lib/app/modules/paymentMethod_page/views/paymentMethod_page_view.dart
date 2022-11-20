@@ -8,10 +8,10 @@ import '../../../../AppBar.dart';
 import '../../../../constants/app_searchbar.dart';
 import '../../../routes/app_pages.dart';
 import '../../ButtonView/views/button_view_view.dart';
-import '../controllers/fifth_page_controller.dart';
+import '../controllers/paymentMethod_page_controller.dart';
 
-class FifthPageView extends GetView<FifthPageController> {
-  const FifthPageView({Key? key}) : super(key: key);
+class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
+  const PaymentMethodPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,12 +51,12 @@ class FifthPageView extends GetView<FifthPageController> {
                       child: SizedBox(
                           width: double.infinity,
                           height: 62.h,
-                          child: ButtonViewView(
+                          child: const ButtonViewView(
                             txt: "Proceed with Payment",
                             page: Routes.SEVENTH_PAGE,
-                            background_color: Colors.white,
-                            txt_color: const Color(0xFFFFFFFF),
-                            border_coor: const Color(0xFFA1A1A1),
+                            backgroundColor: Colors.white,
+                            txtColor: Color(0xFFFFFFFF),
+                            borderCoor: Color(0xFFA1A1A1),
                           )
                           //
                           ),

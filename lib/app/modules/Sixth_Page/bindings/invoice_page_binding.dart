@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/sixth_page_controller.dart';
+import '../controllers/invoice_page_controller.dart';
 
 class SixthPageBinding extends Bindings {
   @override

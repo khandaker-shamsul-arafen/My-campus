@@ -10,14 +10,14 @@ import '../../../../AppBar.dart';
 import '../../../../constants/AppCheckBox.dart';
 import '../../../../constants/app_searchbar.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/third_page_controller.dart';
+import '../controllers/paymentList_page_controller.dart';
 
-class ThirdPageView extends GetView<ThirdPageController> {
-  const ThirdPageView({Key? key}) : super(key: key);
+class PaymentListPageView extends GetView<PaymentListPageController> {
+  const PaymentListPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final flag = Get.put(ThirdPageController());
+    final flag = Get.put(PaymentListPageController());
     return Scaffold(
         appBar: appbarDesign(false),
         body: SafeArea(

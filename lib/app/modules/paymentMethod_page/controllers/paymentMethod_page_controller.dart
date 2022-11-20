@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
 
-class FifthPageController extends GetxController {
+class PaymentMethodPageController extends GetxController {
   //TODO: Implement FifthPageController
-final flagbkash = false.obs;
+  final flagbkash = false.obs;
   final flagekpay = false.obs;
   final count = 0.obs;
 

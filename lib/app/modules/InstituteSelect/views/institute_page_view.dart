@@ -9,10 +9,10 @@ import 'package:my_campus/model/college_model.dart';
 import '../../../../AppBar.dart';
 import '../../../../constants/app_constraints.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/second_page_controller.dart';
+import '../controllers/institute_page_controller.dart';
 
-class SecondPageView extends GetView<SecondPageController> {
-  const SecondPageView({Key? key}) : super(key: key);
+class InstituteSelectPageView extends GetView<InstitutePageController> {
+  const InstituteSelectPageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

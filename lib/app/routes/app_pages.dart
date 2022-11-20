@@ -4,20 +4,20 @@ import '../modules/ClientDetails/bindings/client_details_binding.dart';
 import '../modules/ClientDetails/views/client_details_view.dart';
 import '../modules/Eight_Page/bindings/eight_page_binding.dart';
 import '../modules/Eight_Page/views/eight_page_view.dart';
-import '../modules/Fifth_page/bindings/fifth_page_binding.dart';
-import '../modules/Fifth_page/views/fifth_page_view.dart';
 import '../modules/Fourth_Page/bindings/fourth_page_binding.dart';
 import '../modules/Fourth_Page/views/fourth_page_view.dart';
+import '../modules/InstituteSelect/bindings/institute_page_binding.dart';
+import '../modules/InstituteSelect/views/institute_page_view.dart';
 import '../modules/Seventh_Page/bindings/seventh_page_binding.dart';
 import '../modules/Seventh_Page/views/seventh_page_view.dart';
-import '../modules/Sixth_Page/bindings/sixth_page_binding.dart';
-import '../modules/Sixth_Page/views/sixth_page_view.dart';
-import '../modules/Third_Page/bindings/third_page_binding.dart';
-import '../modules/Third_Page/views/third_page_view.dart';
+import '../modules/Sixth_Page/bindings/invoice_page_binding.dart';
+import '../modules/Sixth_Page/views/invoice_page_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
-import '../modules/second_page/bindings/second_page_binding.dart';
-import '../modules/second_page/views/second_page_view.dart';
+import '../modules/paymentList_Page/bindings/paymentList_page_binding.dart';
+import '../modules/paymentList_Page/views/paymentList_page_view.dart';
+import '../modules/paymentMethod_page/bindings/paymentMethod_page_binding.dart';
+import '../modules/paymentMethod_page/views/paymentMethod_page_view.dart';
 
 part 'app_routes.dart';
 
@@ -34,13 +34,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SECOND_PAGE,
-      page: () => SecondPageView(),
-      binding: SecondPageBinding(),
+      page: () => const InstituteSelectPageView(),
+      binding: InstitutePageBinding(),
     ),
     GetPage(
       name: _Paths.THIRD_PAGE,
-      page: () => const ThirdPageView(),
-      binding: ThirdPageBinding(),
+      page: () => const PaymentListPageView(),
+      binding: PaymentListPageBinding(),
     ),
     GetPage(
       name: _Paths.FOURTH_PAGE,
@@ -49,8 +49,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FIFTH_PAGE,
-      page: () => const FifthPageView(),
-      binding: FifthPageBinding(),
+      page: () => const PaymentMethodPageView(),
+      binding: PaymentMethodPageBinding(),
     ),
     GetPage(
       name: _Paths.SIXTH_PAGE,

@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 import '../../../../model/fee_model.dart';
 
-class ThirdPageController extends GetxController {
+class PaymentListPageController extends GetxController {
   //TODO: Implement ThirdPageController
   var fees = <FeeModel>[].obs;
 
