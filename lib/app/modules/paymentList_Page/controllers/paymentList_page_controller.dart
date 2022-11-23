@@ -14,6 +14,10 @@ class PaymentListPageController extends GetxController {
     fees.add(FeeModel("Yearly Admission Fee", 4000));
     fees.add(FeeModel("Monthly Tution Fee", 5000));
     fees.add(FeeModel("Yearly Admission Fee", 4000));
+    fees.add(FeeModel("Monthly Tution Fee", 5000));
+    fees.add(FeeModel("Monthly Tution Fee", 5000));
+    fees.add(FeeModel("Monthly Tution Fee", 5000));
+
     super.onInit();
   }
 

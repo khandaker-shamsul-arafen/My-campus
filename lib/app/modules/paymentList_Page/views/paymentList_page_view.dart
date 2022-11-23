@@ -49,7 +49,6 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                   ),
                   Obx(() {
                     return SizedBox(
-                      height: 120.h,
                       child: ListView.separated(
                         shrinkWrap: true,
                         itemBuilder: (BuildContext context, int index) {

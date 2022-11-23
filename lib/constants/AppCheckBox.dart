@@ -48,12 +48,14 @@ class _AppCheckBoxState extends State<AppCheckBox> {
           Padding(
             padding: EdgeInsets.only(left: 25.0.w, top: 10.0.h),
             child: SizedBox(
-              width: 110.w,
+              width: 115.w,
               child: Transform.translate(
                   offset: Offset(-20, 0),
                   child: Text(
                     widget.txt,
-                    style: textHintColor124Font(color: const Color(0xFF000000)),
+                    style: textHintColor124Font(
+                      color: const Color(0xFF000000),
+                    ),
                   )),
             ),
           ),
