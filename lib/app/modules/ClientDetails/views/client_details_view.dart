@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_constraints.dart';
-import '../../../../constants/app_text_style.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/widget/AppBar.dart';
 import '../controllers/client_details_controller.dart';
 
 class ClientDetailsView extends GetView<ClientDetailsController> {
@@ -59,7 +59,7 @@ class ClientDetailsView extends GetView<ClientDetailsController> {
                             width: 100.w,
                             padding: EdgeInsets.symmetric(
                                 horizontal: leftMainPadding.w,
-                                vertical: Padding12.h),
+                                vertical: padding12.h),
                             child: Image.asset(
                               controller
                                   .clientController.collegeList[index].image,

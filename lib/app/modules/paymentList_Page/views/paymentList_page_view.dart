@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
-import 'package:my_campus/constants/app_color.dart';
-import 'package:my_campus/constants/app_constraints.dart';
-import 'package:my_campus/constants/app_text_style.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/AppCheckBox.dart';
-import '../../../../constants/app_searchbar.dart';
+import '../../../core/constants/app_color.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/widget/AppBar.dart';
+import '../../../core/widget/AppCheckBox.dart';
+import '../../../core/widget/app_searchbar.dart';
+import '../../../core/widget/customButton.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/paymentList_page_controller.dart';
 
@@ -42,8 +42,8 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                     child: Text(
                       "Select to pay",
                       style: textButtonColor145Font(
-                        color: const Color(0xFF959595),
-                        fontSize: 12.sp,
+                        color: AppColor.hintColor,
+                        fontSize: 12,
                       ),
                     ),
                   ),
@@ -59,7 +59,7 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                         },
                         separatorBuilder: (BuildContext context, int index) {
                           return SizedBox(
-                            width: Padding12.w,
+                            width: padding12.w,
                           );
                         },
                         itemCount: controller.fees.length,
@@ -75,7 +75,7 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 8.0.w),
+                    padding: EdgeInsets.only(right: rightMainPadding - 12.0.w),
                     child: Align(
                       alignment: Alignment.topRight,
                       child: Row(
@@ -86,12 +86,13 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                             style: textHintColor124Font(),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(left: 8.0.w, right: 8.0.w),
+                            padding: EdgeInsets.only(
+                                left: leftMainPadding - 12.w,
+                                right: rightMainPadding - 12.w),
                             child: Text(
                               "7000",
                               style: textButtonColor145Font(
-                                  color: AppColor.txtblackColor,
-                                  fontSize: 12.sp),
+                                  color: AppColor.txtblackColor, fontSize: 12),
                             ),
                           )
                         ],
@@ -99,32 +100,34 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 20.h),
+                    padding: EdgeInsets.only(top: topMainPadding),
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppBarView(
-                          txt: "Pay All",
-                          page: Routes.FIFTH_PAGE,
-                          background_color: const Color(0xFFA369BF),
-                          txt_color: Colors.white,
-                          border_coor: const Color(0xFFA369BF),
-                        )
+                        child: const CustomButton(
+                            txt: "Pay All",
+                            page: Routes.FIFTH_PAGE,
+                            backgroundColor: AppColor.buttonBackgroundColor,
+                            txtColor: Colors.white,
+                            borderColor: AppColor.borderColor,
+                            isbSelected: true,
+                            iseSelected: true)
                         //
                         ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 12.h),
+                    padding: EdgeInsets.only(top: topMainPadding - 8.h),
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppBarView(
-                          txt: "Pay Selected Ones",
-                          page: Routes.FOURTH_PAGE,
-                          background_color: Colors.white,
-                          txt_color: const Color(0xFFA369BF),
-                          border_coor: const Color(0xFFA369BF),
-                        )
+                        child: const CustomButton(
+                            txt: "Pay Selected Ones",
+                            page: Routes.FOURTH_PAGE,
+                            backgroundColor: AppColor.buttonBackgroundColor,
+                            txtColor: AppColor.txtbuttonColor,
+                            borderColor: AppColor.borderColor,
+                            isbSelected: true,
+                            iseSelected: true)
                         //
                         ),
                   )

@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'constants/app_constraints.dart';
+import '../constants/app_constraints.dart';
 
 // ignore: must_be_immutable
 AppBar appbarDesign(bool flag) {

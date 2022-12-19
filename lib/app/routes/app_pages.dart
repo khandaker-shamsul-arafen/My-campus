@@ -2,18 +2,16 @@ import 'package:get/get.dart';
 
 import '../modules/ClientDetails/bindings/client_details_binding.dart';
 import '../modules/ClientDetails/views/client_details_view.dart';
-import '../modules/Eight_Page/bindings/eight_page_binding.dart';
-import '../modules/Eight_Page/views/eight_page_view.dart';
 import '../modules/Fourth_Page/bindings/fourth_page_binding.dart';
 import '../modules/Fourth_Page/views/fourth_page_view.dart';
 import '../modules/InstituteSelect/bindings/institute_page_binding.dart';
 import '../modules/InstituteSelect/views/institute_page_view.dart';
-import '../modules/Seventh_Page/bindings/seventh_page_binding.dart';
-import '../modules/Seventh_Page/views/seventh_page_view.dart';
-import '../modules/Sixth_Page/bindings/invoice_page_binding.dart';
-import '../modules/Sixth_Page/views/invoice_page_view.dart';
+import '../modules/SixPage/bindings/invoice_page_binding.dart';
+import '../modules/SixPage/views/Sixpage_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/invoice_Page/bindings/seventh_page_binding.dart';
+import '../modules/invoice_Page/views/invoice_page_view.dart';
 import '../modules/paymentList_Page/bindings/paymentList_page_binding.dart';
 import '../modules/paymentList_Page/views/paymentList_page_view.dart';
 import '../modules/paymentMethod_page/bindings/paymentMethod_page_binding.dart';
@@ -62,11 +60,7 @@ class AppPages {
       page: () => const SeventhPageView(),
       binding: SeventhPageBinding(),
     ),
-    GetPage(
-      name: _Paths.EIGHT_PAGE,
-      page: () => const EightPageView(),
-      binding: EightPageBinding(),
-    ),
+
     GetPage(
       name: _Paths.CLIENT_DETAILS,
       page: () => const ClientDetailsView(),

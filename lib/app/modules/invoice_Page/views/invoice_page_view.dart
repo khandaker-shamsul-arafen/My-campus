@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
-import 'package:my_campus/constants/app_text_style.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_color.dart';
-import '../../../../constants/app_constraints.dart';
+import '../../../core/constants/app_color.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/widget/AppBar.dart';
+import '../../../core/widget/customButton.dart';
 import '../../../routes/app_pages.dart';
-import '../controllers/seventh_page_controller.dart';
+import '../controllers/invoice_page_controller.dart';
 
 class SeventhPageView extends GetView<SeventhPageController> {
   const SeventhPageView({Key? key}) : super(key: key);
@@ -28,19 +28,19 @@ class SeventhPageView extends GetView<SeventhPageController> {
                   Text(
                     "INVOICE",
                     style: textButtonColor145Font(
-                        fontSize: 17.sp, color: const Color(0xFFA369BF)),
+                        fontSize: 17, color: AppColor.invoiceColor),
                   ),
                   // SizedBox(
                   //   height : 10.h,
                   // ),
                   Padding(
-                    padding: EdgeInsets.only(top: 10.0.h),
+                    padding: EdgeInsets.only(top: topMainPadding - 10.0.h),
                     child: Stack(children: [
                       Container(
                         height: 80.h,
                         width: MediaQuery.of(context).size.width,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFDDDDDD).withOpacity(0.67),
+                          color: AppColor.hintColor.withOpacity(0.25),
                           borderRadius: BorderRadius.circular(2.76),
                         ),
                         child: Padding(
@@ -51,17 +51,17 @@ class SeventhPageView extends GetView<SeventhPageController> {
                               Text(
                                 "Bill To",
                                 style: textButtonColor145Font(
-                                    fontSize: 15.sp,
+                                    fontSize: 15,
                                     color: AppColor.txtblackColor,
                                     weight: FontWeight.w600),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(
-                                    top: topMainPadding.h - 18.h),
+                                    top: topMainPadding.h - 16.h),
                                 child: Text(
                                   "ID: 1145908",
                                   style: textButtonColor145Font(
-                                      fontSize: 15.sp,
+                                      fontSize: 15,
                                       color: AppColor.txtblackColor,
                                       weight: FontWeight.w500),
                                 ),
@@ -72,7 +72,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                                 child: Text(
                                   "Institute: BAF Shaheen College Dhaka",
                                   style: textButtonColor145Font(
-                                      fontSize: 15.sp,
+                                      fontSize: 15,
                                       color: AppColor.txtblackColor),
                                 ),
                               )
@@ -101,7 +101,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
                                         "PAID",
                                         style: textButtonColor145Font(
                                             weight: FontWeight.w600,
-                                            color: Colors.white),
+                                            color: AppColor.txtbuttonColor),
                                       ))),
                             ),
                           ))
@@ -109,15 +109,15 @@ class SeventhPageView extends GetView<SeventhPageController> {
                   ),
 
                   Padding(
-                      padding: EdgeInsets.only(top: 10.h),
+                      padding: EdgeInsets.only(top: topMainPadding - 4.h),
                       child: Text(
                         "Detailed Information",
                         style: textButtonColor145Font(
-                            fontSize: 17.sp, color: const Color(0xFF9D9D9D)),
+                            fontSize: 17.sp, color: AppColor.invoiceBillColor),
                       )),
 
                   Padding(
-                    padding: EdgeInsets.only(top: 10.h),
+                    padding: EdgeInsets.only(top: topMainPadding - 3.h),
                     child: Column(
                       children: [
                         Row(
@@ -126,16 +126,15 @@ class SeventhPageView extends GetView<SeventhPageController> {
                             Text(
                               "Fees",
                               style: textColor187Font(
-                                  fontSize: 16.sp,
-                                  color: const Color(0xFFA369Bf)),
+                                  fontSize: 16, color: AppColor.invoiceColor),
                             ),
                             Row(
                               children: [
                                 Text(
                                   "Vat",
                                   style: textColor187Font(
-                                      fontSize: 16.sp,
-                                      color: const Color(0xFFA369Bf)),
+                                      fontSize: 16,
+                                      color: AppColor.invoiceColor),
                                 ),
                                 SizedBox(
                                   width: 50.w,
@@ -143,8 +142,8 @@ class SeventhPageView extends GetView<SeventhPageController> {
                                 Text(
                                   "Price",
                                   style: textColor187Font(
-                                      fontSize: 16.sp,
-                                      color: const Color(0xFFA369Bf)),
+                                      fontSize: 16,
+                                      color: AppColor.invoiceColor),
                                 )
                               ],
                             ),
@@ -153,13 +152,10 @@ class SeventhPageView extends GetView<SeventhPageController> {
                       ],
                     ),
                   ),
-                  details_information("Monthly Tution Fee", "0%", 4000),
-                  details_information("Yearly Tution Fee", "0%", 3000),
+                  detailsInformation("Monthly Tution Fee", "0%", 4000),
+                  detailsInformation("Yearly Tution Fee", "0%", 3000),
 
-                  const Divider(
-                    thickness: 2,
-                    color: Color(0xFFA1A1A1),
-                  ),
+                  const Divider(thickness: 1, color: AppColor.dividerColor),
                   Align(
                     alignment: Alignment.topRight,
                     child: Row(
@@ -167,11 +163,12 @@ class SeventhPageView extends GetView<SeventhPageController> {
                       children: [
                         Text(
                           "Subtotal",
-                          style: textHintColor124Font(fontSize: 14.sp),
+                          style: textHintColor124Font(
+                              fontSize: 14, color: AppColor.txtblackColor),
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                            left: leftMainPadding.w,
+                            left: leftMainPadding + 18.w,
                           ),
                           child: Text(
                             "7000",
@@ -198,13 +195,14 @@ class SeventhPageView extends GetView<SeventhPageController> {
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppBarView(
-                          txt: "Download Invoice PDF",
-                          page: Routes.SEVENTH_PAGE,
-                          background_color: const Color(0xFFA369BF),
-                          txt_color: Colors.white,
-                          border_coor: const Color(0xFFA369BF),
-                        )),
+                        child: const CustomButton(
+                            txt: "Download Invoice PDF",
+                            page: Routes.SEVENTH_PAGE,
+                            backgroundColor: Color(0xFFA369BF),
+                            txtColor: AppColor.txtbuttonColor,
+                            borderColor: Color(0xFFA369BF),
+                            isbSelected: true,
+                            iseSelected: true)),
                   ),
 
                   Padding(
@@ -212,13 +210,14 @@ class SeventhPageView extends GetView<SeventhPageController> {
                     child: SizedBox(
                         width: double.infinity,
                         height: 62.h,
-                        child: AppBarView(
-                          txt: "Back to Profile",
-                          page: Routes.EIGHT_PAGE,
-                          background_color: Colors.white,
-                          txt_color: Color(0xFFA369BF),
-                          border_coor: const Color(0xFFA369BF),
-                        )),
+                        child: const CustomButton(
+                            txt: "Back to Profile",
+                            page: Routes.HOME,
+                            backgroundColor: AppColor.buttonBackgroundColor,
+                            txtColor: AppColor.txtbuttonColor,
+                            borderColor: AppColor.borderColor,
+                            isbSelected: true,
+                            iseSelected: true)),
                   ),
                 ],
               ),
@@ -227,7 +226,7 @@ class SeventhPageView extends GetView<SeventhPageController> {
         ));
   }
 
-  Widget details_information(String text, String percent, int number) {
+  Widget detailsInformation(String text, String percent, int number) {
     return Padding(
       padding: EdgeInsets.only(top: 10.h),
       child: Row(

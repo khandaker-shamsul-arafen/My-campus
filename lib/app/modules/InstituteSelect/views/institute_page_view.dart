@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
-import 'package:my_campus/constants/app_color.dart';
-import 'package:my_campus/constants/app_text_style.dart';
-import 'package:my_campus/model/college_model.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_constraints.dart';
+import '../../../core/constants/app_color.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/model/college_model.dart';
+import '../../../core/widget/AppBar.dart';
+import '../../../core/widget/customButton.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/institute_page_controller.dart';
 
@@ -46,8 +46,8 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
 
               SizedBox(
                 height: 25.h,
-                child: institute(
-                    "assets/txt_field_icon.png", 'Select your Institute', true),
+                child: institute("assets/txt_field_icon.png",
+                    controller.dropdownValue.value, true),
               ),
 
               const Divider(
@@ -68,13 +68,14 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
                 child: SizedBox(
                     width: double.infinity,
                     height: 60.h,
-                    child: AppBarView(
-                      txt: "Continue",
-                      page: Routes.THIRD_PAGE,
-                      background_color: const Color(0xFFA369BF),
-                      txt_color: AppColor.txtbuttonColor,
-                      border_coor: const Color(0xFFA369BF),
-                    )
+                    child: const CustomButton(
+                        txt: "Continue",
+                        page: Routes.THIRD_PAGE,
+                        backgroundColor: AppColor.buttonBackgroundColor,
+                        txtColor: AppColor.txtbuttonColor,
+                        borderColor: AppColor.borderColor,
+                        isbSelected: true,
+                        iseSelected: true)
                     //
                     ),
               )
@@ -106,9 +107,9 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
                     child: SizedBox(
                         width: 100.w,
                         child: Text(
-                          controller.dropdownValue.value,
+                          txt,
                           style: textHintColor124Font(
-                              fontSize: 16, color: const Color(0xFF1C1C1C)),
+                              fontSize: 16, color: AppColor.hintColor),
                         )),
                   ),
                 ),
@@ -161,7 +162,7 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
                       decoration: InputDecoration.collapsed(
                         hintText: txt,
                         hintStyle: textHintColor124Font(
-                            fontSize: 16, color: const Color(0xFF746A6A)),
+                            fontSize: 16, color: AppColor.hintColor),
                       ),
                     ),
                   ),
@@ -171,5 +172,3 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
           );
   }
 }
-
-

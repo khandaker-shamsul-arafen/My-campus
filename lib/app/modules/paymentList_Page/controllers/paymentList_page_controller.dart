@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../../model/fee_model.dart';
+import '../../../core/model/fee_model.dart';
 
 class PaymentListPageController extends GetxController {
   //TODO: Implement ThirdPageController

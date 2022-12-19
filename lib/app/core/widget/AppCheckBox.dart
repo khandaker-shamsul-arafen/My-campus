@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_campus/constants/app_text_style.dart';
+
+import '../constants/app_color.dart';
+import '../constants/app_text_style.dart';
 
 class AppCheckBox extends StatefulWidget {
   final String txt;
@@ -32,6 +34,7 @@ class _AppCheckBoxState extends State<AppCheckBox> {
               child: Checkbox(
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 activeColor: const Color(0xFFA369BF),
+                checkColor: const Color(0xFFA369BF),
                 //The color to use when this checkbox is checked.
                 //checkColor: Colors.black,
                 // The color to use for the check icon when this checkbox is checked.
@@ -54,7 +57,7 @@ class _AppCheckBoxState extends State<AppCheckBox> {
                   child: Text(
                     widget.txt,
                     style: textHintColor124Font(
-                      color: const Color(0xFF000000),
+                      color: AppColor.txtblackColor,
                     ),
                   )),
             ),
@@ -63,7 +66,7 @@ class _AppCheckBoxState extends State<AppCheckBox> {
             padding: EdgeInsets.only(left: 140.0.w, top: 10.h),
             child: Text(
               widget.number.toString(),
-              style: textHintColor124Font(color: const Color(0xFF000000)),
+              style: textHintColor124Font(color: AppColor.hintColor),
             ),
           )
         ],

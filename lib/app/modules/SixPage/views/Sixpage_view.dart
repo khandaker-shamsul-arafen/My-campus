@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:my_campus/app/modules/app_bar/views/app_bar_view.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_constraints.dart';
-import '../../../../constants/app_searchbar.dart';
-import '../../../../constants/app_text_style.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/widget/AppBar.dart';
+import '../../../core/widget/app_searchbar.dart';
+import '../../../core/widget/customButton.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/invoice_page_controller.dart';
 
@@ -97,13 +97,14 @@ class SixthPageView extends GetView<SixthPageController> {
                   child: SizedBox(
                       width: double.infinity,
                       height: 62.h,
-                      child: AppBarView(
-                        txt: "Proceed with Payment",
-                        page: Routes.SEVENTH_PAGE,
-                        background_color: Color(0xFFA150DF),
-                        txt_color: const Color(0xFFFFFFFF),
-                        border_coor: const Color(0xFFA1A1A1),
-                      )
+                      child: const CustomButton(
+                          txt: "Proceed with Payment",
+                          page: Routes.SEVENTH_PAGE,
+                          backgroundColor: Color(0xFFA150DF),
+                          txtColor: Color(0xFFFFFFFF),
+                          borderColor: Color(0xFFA1A1A1),
+                          isbSelected: true,
+                          iseSelected: true)
                       //
                       ),
                 )

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../../../../model/college_model.dart';
+import '../../../core/model/college_model.dart';
 
 class HomeController extends GetxController {
   var collegeList = <CollegeModel>[].obs;

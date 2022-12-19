@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:my_campus/app/core/constants/app_color.dart';
 
-import '../app/routes/app_pages.dart';
-import 'app_text_style.dart';
-import 'app_textfield.dart';
+import '../../routes/app_pages.dart';
+import '../constants/app_text_style.dart';
+import '../constants/app_textfield.dart';
 
 class AppSearchBar extends StatelessWidget {
   const AppSearchBar({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class AppSearchBar extends StatelessWidget {
               "assets/baf_shaheen.png",
               height: 60.h,
               width: 60.w,
+              // fit: BoxFit.cover,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -31,12 +33,12 @@ class AppSearchBar extends StatelessWidget {
                 Text(
                   "BAF Shaheen College, Dhaka",
                   style: textButtonColor145Font(
-                      fontSize: 18, color: const Color(0xFF403F3F)),
+                      fontSize: 18, color: AppColor.txtblackColor),
                 ),
                 Text(
                   "1145908",
                   style: textHintColor124Font(
-                      fontSize: 14.sp, color: const Color(0xFF838282)),
+                      fontSize: 14.sp, color: AppColor.hintColor),
                 )
               ],
             )

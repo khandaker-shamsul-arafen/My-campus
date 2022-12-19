@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:my_campus/constants/app_constraints.dart';
-import 'package:my_campus/constants/app_text_style.dart';
+import 'package:my_campus/app/core/constants/app_color.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_searchbar.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/widget/AppBar.dart';
+import '../../../core/widget/app_searchbar.dart';
+import '../../../core/widget/customButton.dart';
 import '../../../routes/app_pages.dart';
-import '../../ButtonView/views/button_view_view.dart';
 import '../controllers/paymentMethod_page_controller.dart';
 
 class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
@@ -21,7 +22,9 @@ class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
           child: Obx(() {
             return Padding(
               padding: EdgeInsets.only(
-                  top: 8.0.h, left: leftMainPadding, right: rightMainPadding),
+                  top: topMainPadding - 12.h,
+                  left: leftMainPadding,
+                  right: rightMainPadding),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -29,14 +32,14 @@ class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
                   children: [
                     const AppSearchBar(),
                     Padding(
-                      padding: EdgeInsets.only(top: 18.0.h),
+                      padding: EdgeInsets.only(top: topMainPadding - 2.0.h),
                       child: Text(
                         "Select Payment Method",
                         style: textColor187Font(),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 15.0.h),
+                      padding: EdgeInsets.only(top: topMainPadding - 5.0.h),
                       child: Row(
                         children: [
                           bank("assets/ekpay.png", controller.flagekpay,
@@ -47,17 +50,18 @@ class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 24.h),
+                      padding: EdgeInsets.only(top: topMainPadding + 4.h),
                       child: SizedBox(
                           width: double.infinity,
                           height: 62.h,
-                          child: const ButtonViewView(
-                            txt: "Proceed with Payment",
-                            page: Routes.SEVENTH_PAGE,
-                            backgroundColor: Colors.white,
-                            txtColor: Color(0xFFFFFFFF),
-                            borderCoor: Color(0xFFA1A1A1),
-                          )
+                          child: CustomButton(
+                              txt: "Proceed with Payment",
+                              page: Routes.SEVENTH_PAGE,
+                              backgroundColor: AppColor.buttonBackgroundColor,
+                              txtColor: AppColor.txtbuttonColor,
+                              borderColor: const Color(0xFFA1A1A1),
+                              isbSelected: controller.flagbkash.value,
+                              iseSelected: controller.flagekpay.value)
                           //
                           ),
                     )

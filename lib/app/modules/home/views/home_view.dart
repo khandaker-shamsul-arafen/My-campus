@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:my_campus/app/core/constants/app_color.dart';
 
-import '../../../../AppBar.dart';
-import '../../../../constants/app_constraints.dart';
-import '../../../../constants/app_text_style.dart';
-import '../../../../constants/app_textfield.dart';
+import '../../../core/constants/app_constraints.dart';
+import '../../../core/constants/app_text_style.dart';
+import '../../../core/constants/app_textfield.dart';
+import '../../../core/widget/AppBar.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/home_controller.dart';
 
@@ -76,7 +77,8 @@ class HomeView extends GetView<HomeController> {
                                     style: ElevatedButton.styleFrom(
                                       shadowColor: Colors.grey.withOpacity(0.5),
                                       elevation: 5,
-                                      backgroundColor: const Color(0xFFA369BF),
+                                      backgroundColor:
+                                          AppColor.buttonBackgroundColor,
                                       shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(44.0.r)),
@@ -153,7 +155,7 @@ class HomeView extends GetView<HomeController> {
                       },
                       separatorBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          width: Padding12.w,
+                          width: padding12.w,
                         );
                       },
                       itemCount: controller.collegeList.length,
@@ -262,7 +264,7 @@ class HomeView extends GetView<HomeController> {
             height: 80.h,
             width: 100.w,
             padding: EdgeInsets.symmetric(
-                horizontal: leftMainPadding.w, vertical: Padding12.h),
+                horizontal: leftMainPadding.w, vertical: padding12.h),
             child: Image.asset(
               logo,
             ),
