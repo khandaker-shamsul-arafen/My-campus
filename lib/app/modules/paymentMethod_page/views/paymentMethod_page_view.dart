@@ -83,10 +83,10 @@ class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
               side: BorderSide(
                 // border color
                 color: (isSelected.value)
-                    ? const Color(0xFFA150DF)
-                    : (isNotSelected.value)
-                        ? const Color(0xFFDFDFDF)
-                        : const Color(0xFFDFDFDF),
+                    ? AppColor.buttonBackgroundColor
+                    : //(isNotSelected.value)
+                    const Color(0xFFDFDFDF),
+                // : const Color(0xFFDFDFDF),
                 // border thickness
                 width: 1.5.w,
               ),

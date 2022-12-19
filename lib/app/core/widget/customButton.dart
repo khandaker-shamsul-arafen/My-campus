@@ -63,9 +63,9 @@ class _CustomButtonState extends State<CustomButton> {
                     backgroundColor: Color(0xFFDFDFDF),
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30.0)),
-                    side: BorderSide(
+                    side: const BorderSide(
                       width: 1.0,
-                      color: widget.borderColor,
+                      color: Color(0xFFDFDFDF),
                     )),
                 onPressed: () {
                   Null;
