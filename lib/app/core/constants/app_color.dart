@@ -9,4 +9,6 @@ class AppColor {
   static const invoiceBillColor = Color(0xFF838282);
   static const dividerColor = Color(0xFF4F4F4F);
   static const buttonBackgroundColor = Color(0xFFA369BF);
+  static const activeColor = Color(0xFFA369BF);
+  static const checkColor = Color(0xFFA369BF);
 }

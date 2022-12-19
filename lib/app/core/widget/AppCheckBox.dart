@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_campus/app/core/constants/app_constraints.dart';
 
 import '../constants/app_color.dart';
 import '../constants/app_text_style.dart';
@@ -28,13 +29,13 @@ class _AppCheckBoxState extends State<AppCheckBox> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: EdgeInsets.only(top: 10.0.h),
+            padding: EdgeInsets.only(top: topMainPadding - 10.0.h),
             child: SizedBox(
               width: 15.w,
               child: Checkbox(
                 materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                activeColor: const Color(0xFFA369BF),
-                checkColor: const Color(0xFFA369BF),
+                activeColor: AppColor.activeColor,
+                checkColor: AppColor.checkColor,
                 //The color to use when this checkbox is checked.
                 //checkColor: Colors.black,
                 // The color to use for the check icon when this checkbox is checked.
