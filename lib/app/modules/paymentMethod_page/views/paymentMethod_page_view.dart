@@ -59,7 +59,7 @@ class PaymentMethodPageView extends GetView<PaymentMethodPageController> {
                               page: Routes.SEVENTH_PAGE,
                               backgroundColor: AppColor.buttonBackgroundColor,
                               txtColor: AppColor.txtbuttonColor,
-                              borderColor: const Color(0xFFA1A1A1),
+                              borderColor: AppColor.borderColor,
                               isbSelected: controller.flagbkash.value,
                               iseSelected: controller.flagekpay.value)
                           //

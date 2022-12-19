@@ -31,14 +31,14 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                 children: [
                   const AppSearchBar(),
                   Padding(
-                    padding: EdgeInsets.only(top: 15.0.h),
+                    padding: EdgeInsets.only(top: topMainPadding - 5.0.h),
                     child: Text(
                       "Payment List",
                       style: textColor187Font(),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 6.h),
+                    padding: EdgeInsets.only(top: topMainPadding - 14.h),
                     child: Text(
                       "Select to pay",
                       style: textButtonColor145Font(
