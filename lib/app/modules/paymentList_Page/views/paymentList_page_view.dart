@@ -108,7 +108,7 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                             txt: "Pay All",
                             page: Routes.FIFTH_PAGE,
                             backgroundColor: AppColor.buttonBackgroundColor,
-                            txtColor: Colors.white,
+                            txtColor: AppColor.txtbuttonColor,
                             borderColor: AppColor.borderColor,
                             isbSelected: true,
                             iseSelected: true)
@@ -122,7 +122,7 @@ class PaymentListPageView extends GetView<PaymentListPageController> {
                         height: 62.h,
                         child: const CustomButton(
                             txt: "Pay Selected Ones",
-                            page: Routes.FOURTH_PAGE,
+                            page: Routes.FIFTH_PAGE,
                             backgroundColor: AppColor.buttonBackgroundColor,
                             txtColor: AppColor.txtbuttonColor,
                             borderColor: AppColor.borderColor,
