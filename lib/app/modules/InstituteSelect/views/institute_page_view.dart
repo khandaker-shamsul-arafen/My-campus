@@ -107,7 +107,7 @@ class InstituteSelectPageView extends GetView<InstitutePageController> {
                     child: SizedBox(
                         width: 100.w,
                         child: Text(
-                          txt,
+                          controller.dropdownValue.value,
                           style: textHintColor124Font(
                               fontSize: 16, color: AppColor.hintColor),
                         )),
